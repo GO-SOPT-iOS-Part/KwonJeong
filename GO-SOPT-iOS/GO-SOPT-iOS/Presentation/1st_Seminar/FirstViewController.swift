@@ -155,12 +155,12 @@ extension FirstViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        nameTextFieldView.backgroundColor = .systemGray
+        nameTextFieldView.backgroundColor = .black
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        nameTextFieldView.backgroundColor = .systemGray
+        nameTextFieldView.backgroundColor = .black
         return true
     }
     
