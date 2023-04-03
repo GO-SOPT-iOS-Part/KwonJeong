@@ -19,6 +19,8 @@ final class SecondViewController: UIViewController {
     
     // MARK: - Properties
     
+    public var name: String?
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -37,9 +39,9 @@ extension SecondViewController {
         view.backgroundColor = .white
         
         nameLabel.do {
-            $0.text = "제 이름은요!"
             $0.font = .boldSystemFont(ofSize: 22)
             $0.textAlignment = .center
+            $0.numberOfLines = 2
         }
         
         backButton.do {
@@ -72,6 +74,16 @@ extension SecondViewController {
     
     private func setAddTarget() {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+    }
+    
+    func setDataBind() {
+        guard let name = self.name else { return }
+        if name == "" {
+            nameLabel.text = "제 이름 모르겠죵?"
+        }
+        else {
+            nameLabel.text = "제 이름은요! \(name)입니다!"
+        }
     }
     
     // MARK: - @objc Methods

@@ -118,11 +118,15 @@ extension FirstViewController {
     private func presentToSecondVC() {
         let secondVC = SecondViewController()
         secondVC.modalPresentationStyle = .formSheet
-        self.present(secondVC, animated: true)
+        secondVC.name = nameTextField.text
+        secondVC.setDataBind()
+        self.present(secondVC, animated: true, completion: nil)
     }
     
     private func pushToSecondVC() {
         let secondVC = SecondViewController()
+        secondVC.name = nameTextField.text
+        secondVC.setDataBind()
         navigationController?.pushViewController(secondVC, animated: true)
     }
     
