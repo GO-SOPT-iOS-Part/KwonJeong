@@ -47,7 +47,7 @@ extension SecondViewController {
         backButton.do {
             $0.setTitle("뒤로가기", for: .normal)
             $0.setTitleColor(.white, for: .normal)
-            $0.backgroundColor = .systemGray2
+            $0.backgroundColor = .systemGray4
             $0.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
             $0.layer.cornerRadius = 5
         }

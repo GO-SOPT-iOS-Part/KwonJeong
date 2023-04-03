@@ -26,6 +26,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setDelegate()
         setAddTarget()
     }
 }
@@ -47,17 +48,17 @@ extension FirstViewController {
         nameTextField.do {
             $0.placeholder = "이름을 입력해주세요"
             $0.font = .systemFont(ofSize: 17, weight: .medium)
-            $0.textColor = .systemGray2
+//            $0.textColor = .systemGray2
             $0.clearButtonMode = .whileEditing
         }
         
         nameTextFieldView.do {
-            $0.backgroundColor = .systemGray2
+            $0.backgroundColor = .systemGray4
         }
         
         presentButton.do {
             $0.setTitle("present", for: .normal)
-            $0.backgroundColor = .systemGray2
+            $0.backgroundColor = .systemGray4
             $0.setTitleColor(.white, for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             $0.layer.cornerRadius = 5
@@ -65,7 +66,7 @@ extension FirstViewController {
         
         pushButton.do {
             $0.setTitle("push", for: .normal)
-            $0.backgroundColor = .systemGray2
+            $0.backgroundColor = .systemGray4
             $0.setTitleColor(.white, for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             $0.layer.cornerRadius = 5
@@ -110,6 +111,10 @@ extension FirstViewController {
     
     // MARK: - Methods
     
+    private func setDelegate() {
+        nameTextField.delegate = self
+    }
+    
     private func setAddTarget() {
         presentButton.addTarget(self, action: #selector(presentButtonTapped), for: .touchUpInside)
         pushButton.addTarget(self, action: #selector(pushButtonTapped), for: .touchUpInside)
@@ -140,5 +145,30 @@ extension FirstViewController {
     @objc
     private func pushButtonTapped() {
         pushToSecondVC()
+    }
+}
+
+extension FirstViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        nameTextField.textColor = .black
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        nameTextFieldView.backgroundColor = .systemGray
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        nameTextFieldView.backgroundColor = .systemGray
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        let text = nameTextField.text
+        if text == "" {
+            nameTextFieldView.backgroundColor = .systemGray4
+        }
+        return true
     }
 }
