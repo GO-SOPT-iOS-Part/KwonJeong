@@ -56,15 +56,55 @@
 		03CD4E4529DAFE76002BF3E0 /* GO-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */,
-				03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */,
+				03CD4E5A29DB01D5002BF3E0 /* Application */,
+				03CD4E5B29DB0309002BF3E0 /* Presentation */,
+				03CD4E5D29DB0386002BF3E0 /* Resource */,
 				03CD4E4A29DAFE76002BF3E0 /* ViewController.swift */,
 				03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */,
-				03CD4E4F29DAFE76002BF3E0 /* Assets.xcassets */,
-				03CD4E5129DAFE76002BF3E0 /* LaunchScreen.storyboard */,
 				03CD4E5429DAFE76002BF3E0 /* Info.plist */,
 			);
 			path = "GO-SOPT-iOS";
+			sourceTree = "<group>";
+		};
+		03CD4E5A29DB01D5002BF3E0 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */,
+				03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		03CD4E5B29DB0309002BF3E0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				03CD4E5C29DB0317002BF3E0 /* 1st_Seminar */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		03CD4E5C29DB0317002BF3E0 /* 1st_Seminar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 1st_Seminar;
+			sourceTree = "<group>";
+		};
+		03CD4E5D29DB0386002BF3E0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				03CD4E5E29DB039E002BF3E0 /* AssetCatalog */,
+				03CD4E5129DAFE76002BF3E0 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		03CD4E5E29DB039E002BF3E0 /* AssetCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				03CD4E4F29DAFE76002BF3E0 /* Assets.xcassets */,
+			);
+			path = AssetCatalog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
