@@ -13,6 +13,9 @@
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
 		03CD4E5029DAFE76002BF3E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4F29DAFE76002BF3E0 /* Assets.xcassets */; };
 		03CD4E5329DAFE76002BF3E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E5129DAFE76002BF3E0 /* LaunchScreen.storyboard */; };
+		03CD4E6129DB047A002BF3E0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 03CD4E6029DB047A002BF3E0 /* SnapKit */; };
+		03CD4E6429DB0485002BF3E0 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 03CD4E6329DB0485002BF3E0 /* Then */; };
+		03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,7 @@
 		03CD4E4F29DAFE76002BF3E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03CD4E5229DAFE76002BF3E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03CD4E5429DAFE76002BF3E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CD4E6129DB047A002BF3E0 /* SnapKit in Frameworks */,
+				03CD4E6429DB0485002BF3E0 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,7 @@
 		03CD4E5C29DB0317002BF3E0 /* 1st_Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */,
 			);
 			path = 1st_Seminar;
 			sourceTree = "<group>";
@@ -123,6 +130,10 @@
 			dependencies = (
 			);
 			name = "GO-SOPT-iOS";
+			packageProductDependencies = (
+				03CD4E6029DB047A002BF3E0 /* SnapKit */,
+				03CD4E6329DB0485002BF3E0 /* Then */,
+			);
 			productName = "GO-SOPT-iOS";
 			productReference = 03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +162,10 @@
 				Base,
 			);
 			mainGroup = 03CD4E3A29DAFE76002BF3E0;
+			packageReferences = (
+				03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				03CD4E6229DB0485002BF3E0 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 03CD4E4429DAFE76002BF3E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,6 +196,7 @@
 				03CD4E4B29DAFE76002BF3E0 /* ViewController.swift in Sources */,
 				03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
+				03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +414,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		03CD4E6229DB0485002BF3E0 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03CD4E6029DB047A002BF3E0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		03CD4E6329DB0485002BF3E0 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03CD4E6229DB0485002BF3E0 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 03CD4E3B29DAFE76002BF3E0 /* Project object */;
 }
