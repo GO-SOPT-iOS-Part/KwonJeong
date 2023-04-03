@@ -25,6 +25,7 @@ final class SecondViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -45,7 +46,7 @@ extension SecondViewController {
             $0.setTitle("뒤로가기", for: .normal)
             $0.setTitleColor(.white, for: .normal)
             $0.backgroundColor = .systemGray2
-            $0.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
+            $0.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
             $0.layer.cornerRadius = 5
         }
     }
@@ -69,5 +70,19 @@ extension SecondViewController {
     
     // MARK: - Methods
     
+    private func setAddTarget() {
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+    }
+    
     // MARK: - @objc Methods
+    
+    @objc
+    private func backButtonTapped() {
+        if self.navigationController == nil {
+            self.dismiss(animated: true, completion: nil)
+        }
+        else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
