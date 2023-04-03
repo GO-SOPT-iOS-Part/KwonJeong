@@ -16,6 +16,7 @@
 		03CD4E6429DB0485002BF3E0 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 03CD4E6329DB0485002BF3E0 /* Then */; };
 		03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */; };
 		03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E6929DB06AD002BF3E0 /* UIView +.swift */; };
+		03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E6B29DB0F07002BF3E0 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		03CD4E5429DAFE76002BF3E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		03CD4E6929DB06AD002BF3E0 /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
+		03CD4E6B29DB0F07002BF3E0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */,
+				03CD4E6B29DB0F07002BF3E0 /* SecondViewController.swift */,
 			);
 			path = 1st_Seminar;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */,
 				03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
+				03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */,
 				03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

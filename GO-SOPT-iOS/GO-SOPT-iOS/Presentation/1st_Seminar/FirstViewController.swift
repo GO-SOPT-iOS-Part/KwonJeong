@@ -26,6 +26,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -38,7 +39,7 @@ extension FirstViewController {
         
         nameLabel.do {
             $0.text = "이름이 무엇인가요?"
-            $0.font = .systemFont(ofSize: 22, weight: .medium)
+            $0.font = .systemFont(ofSize: 24, weight: .medium)
             $0.textColor = .black
             $0.textAlignment = .center
         }
@@ -58,6 +59,7 @@ extension FirstViewController {
             $0.setTitle("present", for: .normal)
             $0.backgroundColor = .systemGray2
             $0.setTitleColor(.white, for: .normal)
+            $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             $0.layer.cornerRadius = 5
         }
         
@@ -65,6 +67,7 @@ extension FirstViewController {
             $0.setTitle("push", for: .normal)
             $0.backgroundColor = .systemGray2
             $0.setTitleColor(.white, for: .normal)
+            $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             $0.layer.cornerRadius = 5
         }
     }
@@ -103,5 +106,35 @@ extension FirstViewController {
             $0.leading.trailing.equalTo(presentButton)
             $0.height.equalTo(44)
         }
+    }
+    
+    // MARK: - Methods
+    
+    private func setAddTarget() {
+        presentButton.addTarget(self, action: #selector(presentButtonTapped), for: .touchUpInside)
+        pushButton.addTarget(self, action: #selector(pushButtonTapped), for: .touchUpInside)
+    }
+    
+    private func presentToSecondVC() {
+        let secondVC = SecondViewController()
+        secondVC.modalPresentationStyle = .formSheet
+        self.present(secondVC, animated: true)
+    }
+    
+    private func pushToSecondVC() {
+        let secondVC = SecondViewController()
+        navigationController?.pushViewController(secondVC, animated: true)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc
+    private func presentButtonTapped() {
+        presentToSecondVC()
+    }
+    
+    @objc
+    private func pushButtonTapped() {
+        pushToSecondVC()
     }
 }
