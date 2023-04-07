@@ -21,6 +21,11 @@ final class FirstViewController: UIViewController {
     private lazy var pushButton = UIButton()
     
     // MARK: - View Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetTextField()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +144,10 @@ extension FirstViewController {
     
     private func setTextField() {
         self.nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    private func resetTextField() {
+        nameTextField.text?.removeAll()
     }
     
     // MARK: - @objc Methods
