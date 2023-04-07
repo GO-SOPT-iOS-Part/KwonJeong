@@ -27,6 +27,7 @@ final class FirstViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        setTextField()
         setAddTarget()
     }
 }
@@ -61,6 +62,7 @@ extension FirstViewController {
             $0.setTitleColor(.white, for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             $0.layer.cornerRadius = 5
+            $0.isEnabled = false
         }
         
         pushButton.do {
@@ -69,6 +71,7 @@ extension FirstViewController {
             $0.setTitleColor(.white, for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             $0.layer.cornerRadius = 5
+            $0.isEnabled = false
         }
     }
     
@@ -134,6 +137,10 @@ extension FirstViewController {
         navigationController?.pushViewController(secondVC, animated: true)
     }
     
+    private func setTextField() {
+        self.nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
     // MARK: - @objc Methods
     
     @objc
@@ -144,6 +151,12 @@ extension FirstViewController {
     @objc
     private func pushButtonTapped() {
         pushToSecondVC()
+    }
+    
+    @objc
+    private func textFieldDidChange(sender: UITextField) {
+        self.presentButton.isEnabled = self.nameTextField.hasText
+        self.pushButton.isEnabled = self.nameTextField.hasText
     }
 }
 
@@ -165,7 +178,7 @@ extension FirstViewController: UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         let text = nameTextField.text
-        if text == "" {
+        if text?.isEmpty == true {
             nameTextFieldView.backgroundColor = .systemGray4
         }
         return true
