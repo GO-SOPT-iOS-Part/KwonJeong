@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class FirstViewController: UIViewController {
+final class FirstViewController: UIViewController {
     
     // MARK: - UI Components
     
@@ -48,7 +48,6 @@ extension FirstViewController {
         nameTextField.do {
             $0.placeholder = "이름을 입력해주세요"
             $0.font = .systemFont(ofSize: 17, weight: .medium)
-//            $0.textColor = .systemGray2
             $0.clearButtonMode = .whileEditing
         }
         

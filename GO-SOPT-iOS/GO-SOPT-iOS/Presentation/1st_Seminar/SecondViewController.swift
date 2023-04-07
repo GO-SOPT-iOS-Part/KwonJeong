@@ -78,12 +78,7 @@ extension SecondViewController {
     
     func setDataBind() {
         guard let name = self.name else { return }
-        if name == "" {
-            nameLabel.text = "제 이름 모르겠죵?"
-        }
-        else {
-            nameLabel.text = "제 이름은요! \(name)입니다!"
-        }
+        nameLabel.text = (name.isEmpty) ? "제 이름 모르겠죵?" : "제 이름은요! \(name)입니다!"
     }
     
     // MARK: - @objc Methods
