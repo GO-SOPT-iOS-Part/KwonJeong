@@ -9,11 +9,11 @@ import UIKit
 
 public enum Color {
     
-    public static let tivingMain = UIColor(named: "mainRed")!
-    public static let tivingBlack = UIColor(named: "black")!
-    public static let tivingWhite = UIColor(named: "white")!
-    public static let gray1 = UIColor(named: "gray1")!
-    public static let gray2 = UIColor(named: "gray2")!
-    public static let gray3 = UIColor(named: "gray3")!
-    public static let gray4 = UIColor(named: "gray4")!
+    public static let tvingRed = UIColor(named: "mainRed")!
+    public static let tvingBlack = UIColor(named: "black")!
+    public static let tvingWhite = UIColor(named: "white")!
+    public static let tvingGray1 = UIColor(named: "gray1")!
+    public static let tvingGray2 = UIColor(named: "gray2")!
+    public static let tvingGray3 = UIColor(named: "gray3")!
+    public static let tvingGray4 = UIColor(named: "gray4")!
 }

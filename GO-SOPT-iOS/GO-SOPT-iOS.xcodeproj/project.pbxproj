@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03753B9F29E3EDD700B4F2A2 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		03CD4E3A29DAFE76002BF3E0 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		03CD4E9129E29712002BF3E0 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				03753B9F29E3EDD700B4F2A2 /* SignIn */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -274,6 +285,7 @@
 				03CD4E9029E29511002BF3E0 /* Color.swift in Sources */,
 				03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */,
 				03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */,
+				03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
 				03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */,
 				03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */,

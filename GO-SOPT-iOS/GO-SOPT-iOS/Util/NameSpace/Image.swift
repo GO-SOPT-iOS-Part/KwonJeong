@@ -14,5 +14,5 @@ public enum Image {
     public static let backButtonIcon = UIImage(named: "btn_before")!
     public static let passwordIcon = UIImage(named: "eye-slash")!
     public static let deleteIcon = UIImage(named: "x-circle")!
-    public static let tivingLogo = UIImage(named: "welcome")!
+    public static let tvingLogo = UIImage(named: "welcome")!
 }
