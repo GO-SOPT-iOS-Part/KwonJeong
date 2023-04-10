@@ -29,7 +29,7 @@ final class CheckButton: UIButton {
     
     func setUI() {
         layer.cornerRadius = 3
-        titleLabel?.font = .pretendard(.semibold, size: 14)
+        titleLabel?.font = UIFont.pretendard(.semibold, size: 14)
         setState(.notAllow)
     }
     

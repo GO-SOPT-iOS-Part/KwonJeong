@@ -11,6 +11,11 @@
 		03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA029E3F2E100B4F2A2 /* UITextField +.swift */; };
 		03753BA329E3F2FA00B4F2A2 /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA229E3F2FA00B4F2A2 /* UIButton +.swift */; };
 		03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA529E3F36400B4F2A2 /* CheckButton.swift */; };
+		03753BAF29E403FA00B4F2A2 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAB29E403FA00B4F2A2 /* Pretendard-SemiBold.otf */; };
+		03753BB029E403FA00B4F2A2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAC29E403FA00B4F2A2 /* Pretendard-Regular.otf */; };
+		03753BB129E403FA00B4F2A2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */; };
+		03753BB229E403FA00B4F2A2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */; };
+		03753BB529E4051B00B4F2A2 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 03753BB429E4051B00B4F2A2 /* Inject */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -33,6 +38,10 @@
 		03753BA029E3F2E100B4F2A2 /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
 		03753BA229E3F2FA00B4F2A2 /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		03753BA529E3F36400B4F2A2 /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
+		03753BAB29E403FA00B4F2A2 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		03753BAC29E403FA00B4F2A2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,11 +56,7 @@
 		03CD4E8A29E294E8002BF3E0 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		03CD4E8D29E2950A002BF3E0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		03CD4E8F29E29511002BF3E0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		03CD4E9429E29AE1002BF3E0 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.otf"; path = "../../../../../../../../../Downloads/Pretendard-1.3.6/public/static/Pretendard-Medium.otf"; sourceTree = "<group>"; };
-		03CD4E9529E29AE1002BF3E0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../../../../Downloads/Pretendard-1.3.6/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
-		03CD4E9729E29AE1002BF3E0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../../../../../Downloads/Pretendard-1.3.6/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
-		03CD4E9829E29B37002BF3E0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
-		03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont +.swift"; sourceTree = "<group>"; };
+		03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont +.swift"; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			files = (
 				03CD4E6129DB047A002BF3E0 /* SnapKit in Frameworks */,
 				03CD4E6429DB0485002BF3E0 /* Then in Frameworks */,
+				03753BB529E4051B00B4F2A2 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,10 +214,10 @@
 		03CD4E9329E29A3B002BF3E0 /* Pretendard */ = {
 			isa = PBXGroup;
 			children = (
-				03CD4E9829E29B37002BF3E0 /* Pretendard-Bold.otf */,
-				03CD4E9429E29AE1002BF3E0 /* Pretendard-Medium.otf */,
-				03CD4E9529E29AE1002BF3E0 /* Pretendard-Regular.otf */,
-				03CD4E9729E29AE1002BF3E0 /* Pretendard-SemiBold.otf */,
+				03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */,
+				03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */,
+				03753BAC29E403FA00B4F2A2 /* Pretendard-Regular.otf */,
+				03753BAB29E403FA00B4F2A2 /* Pretendard-SemiBold.otf */,
 			);
 			path = Pretendard;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			packageProductDependencies = (
 				03CD4E6029DB047A002BF3E0 /* SnapKit */,
 				03CD4E6329DB0485002BF3E0 /* Then */,
+				03753BB429E4051B00B4F2A2 /* Inject */,
 			);
 			productName = "GO-SOPT-iOS";
 			productReference = 03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */;
@@ -267,6 +274,7 @@
 			packageReferences = (
 				03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				03CD4E6229DB0485002BF3E0 /* XCRemoteSwiftPackageReference "Then" */,
+				03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */,
 			);
 			productRefGroup = 03CD4E4429DAFE76002BF3E0 /* Products */;
 			projectDirPath = "";
@@ -285,7 +293,11 @@
 				03CD4E5329DAFE76002BF3E0 /* LaunchScreen.storyboard in Resources */,
 				03CD4E8929E294DF002BF3E0 /* Image.xcassets in Resources */,
 				03CD4E8B29E294E8002BF3E0 /* Color.xcassets in Resources */,
+				03753BB129E403FA00B4F2A2 /* Pretendard-Medium.otf in Resources */,
+				03753BAF29E403FA00B4F2A2 /* Pretendard-SemiBold.otf in Resources */,
+				03753BB029E403FA00B4F2A2 /* Pretendard-Regular.otf in Resources */,
 				03CD4E5029DAFE76002BF3E0 /* Assets.xcassets in Resources */,
+				03753BB229E403FA00B4F2A2 /* Pretendard-Bold.otf in Resources */,
 				03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +480,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-Xlinker-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kwonjeong.GO-SOPT-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -496,6 +516,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-Xlinker-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kwonjeong.GO-SOPT-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -528,6 +556,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -547,6 +583,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		03753BB429E4051B00B4F2A2 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
 		03CD4E6029DB047A002BF3E0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */;
