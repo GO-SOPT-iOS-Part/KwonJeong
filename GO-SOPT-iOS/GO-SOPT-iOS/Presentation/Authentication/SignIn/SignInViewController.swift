@@ -17,7 +17,8 @@ final class SignInViewController: UIViewController {
     private let loginLabel = UILabel()
     private let idTextField = UITextField()
     private let passwordTextField = UITextField()
-    private let passwordClearButtion = UIButton()
+    private let passwordButtonView = UIView()
+    private let passwordClearButton = UIButton()
     private let passwordSecurityButton = UIButton()
     private let loginButton = CheckButton()
     private let findIdButton = UIButton()
@@ -36,7 +37,6 @@ final class SignInViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
-        print("Asdf")
     }
 }
 
@@ -73,16 +73,20 @@ extension SignInViewController {
             $0.textColor = Color.tvingGray2
             $0.layer.cornerRadius = 3
             $0.isSecureTextEntry = true
-            $0.clearButtonMode = .always
+//            $0.clearButtonMode = .never
+            $0.rightView = passwordButtonView
+            $0.rightViewMode = .always
             $0.setLeftPaddingPoints(23)
         }
 
-        passwordClearButtion.do {
+        passwordClearButton.do {
             $0.setImage(Image.deleteIcon, for: .normal)
+            $0.addTarget(self, action: #selector(passwordClearButtonDidTap), for: .touchUpInside)
         }
 
         passwordSecurityButton.do {
             $0.setImage(Image.passwordIcon, for: .normal)
+            $0.addTarget(self, action: #selector(passwordSecurityButtonDidTap), for: .touchUpInside)
         }
 
         loginButton.do {
@@ -129,9 +133,10 @@ extension SignInViewController {
     
     private func setLayout() {
         
+        passwordButtonView.addSubviews(passwordClearButton, passwordSecurityButton)
         view.addSubviews(loginLabel, idTextField, passwordTextField,
                          loginButton, findIdButton, centerView, findPasswordButton,
-                         accountVerificationLabel, createNicknameButton)
+                         accountVerificationLabel, createNicknameButton, passwordButtonView)
 
         loginLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(46)
@@ -149,18 +154,20 @@ extension SignInViewController {
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(52)
         }
-
-//        passwordSecurityButton.snp.makeConstraints {
-//            $0.centerX.equalToSuperview()
-//            $0.trailing.equalToSuperview().inset(20)
-//            $0.width.height.equalTo(20)
-//        }
-//
-//        passwordClearButtion.snp.makeConstraints {
-//            $0.centerY.equalToSuperview()
-//            $0.trailing.equalTo(passwordClearButtion.snp.leading).inset(16)
-//            $0.width.height.equalTo(20)
-//        }
+        
+        passwordButtonView.snp.makeConstraints {
+            $0.width.equalTo(76)
+            $0.height.equalTo(20)
+        }
+        
+        passwordClearButton.snp.makeConstraints {
+            $0.top.leading.equalToSuperview()
+        }
+        
+        passwordSecurityButton.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
+        }
 
         loginButton.snp.makeConstraints {
             $0.top.equalTo(passwordTextField.snp.bottom).offset(21)
@@ -203,5 +210,23 @@ extension SignInViewController {
     
     // MARK: - Methods
     
+    func clearButtonClick() {
+        print("clearButton")
+    }
+    
+    func securityButtonClick() {
+        print("securityButton")
+    }
+    
     // MARK: - @objc Methods
+    
+    @objc
+    func passwordClearButtonDidTap() {
+        clearButtonClick()
+    }
+    
+    @objc
+    func passwordSecurityButtonDidTap() {
+        securityButtonClick()
+    }
 }

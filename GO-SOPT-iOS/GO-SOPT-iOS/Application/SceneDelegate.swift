@@ -7,8 +7,6 @@
 
 import UIKit
 
-import Inject
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -20,15 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-//        self.window = UIWindow(windowScene: windowScene)
-//        let navigationController = UINavigationController(rootViewController: SignInViewController())
-//        self.window?.rootViewController = navigationController
-//        self.window?.makeKeyAndVisible()
-        
-        let injectViewController = Inject.ViewControllerHost(SignInViewController())
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = injectViewController
+        let navigationController = UINavigationController(rootViewController: SignInViewController())
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
+        
+//        let injectViewController = Inject.ViewControllerHost(SignInViewController())
+//        self.window = UIWindow(windowScene: windowScene)
+//        self.window?.rootViewController = injectViewController
+//        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
