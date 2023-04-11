@@ -16,6 +16,7 @@
 		03753BB129E403FA00B4F2A2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */; };
 		03753BB229E403FA00B4F2A2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */; };
 		03753BB529E4051B00B4F2A2 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 03753BB429E4051B00B4F2A2 /* Inject */; };
+		03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		03753BAC29E403FA00B4F2A2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 				03753BA529E3F36400B4F2A2 /* CheckButton.swift */,
 			);
 			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		03753BB629E5B26600B4F2A2 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		03CD4E3A29DAFE76002BF3E0 = {
@@ -199,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				03753B9F29E3EDD700B4F2A2 /* SignIn */,
+				03753BB629E5B26600B4F2A2 /* Welcome */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 				03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */,
 				03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */,
 				03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */,
+				03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
 				03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */,
 				03753BA329E3F2FA00B4F2A2 /* UIButton +.swift in Sources */,
