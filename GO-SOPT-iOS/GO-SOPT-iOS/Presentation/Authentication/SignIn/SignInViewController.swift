@@ -47,6 +47,7 @@ final class SignInViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        setAddTarget()
     }
 }
 
@@ -90,12 +91,10 @@ extension SignInViewController {
 
         textFiedClearButton.do {
             $0.setImage(Image.deleteIcon, for: .normal)
-            $0.addTarget(self, action: #selector(passwordClearButtonDidTap), for: .touchUpInside)
         }
 
         textFieldSecurityButton.do {
             $0.setImage(Image.passwordIcon, for: .normal)
-            $0.addTarget(self, action: #selector(passwordSecurityButtonDidTap), for: .touchUpInside)
         }
 
         loginButton.do {
@@ -224,6 +223,12 @@ extension SignInViewController {
         passwordTextField.delegate = self
     }
     
+    private func setAddTarget() {
+        textFiedClearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
+        textFieldSecurityButton.addTarget(self, action: #selector(securityButtonDidTap), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+    }
+    
     private func clearButtonClick() {
         if let textField = activeTextField {
             switch textField {
@@ -279,16 +284,29 @@ extension SignInViewController {
         }
     }
     
+    private func presentToWelcomeVC() {
+        let welcomeVC = WelcomeViewController()
+        welcomeVC.modalPresentationStyle = .fullScreen
+        welcomeVC.userName = idTextField.text
+        welcomeVC.setDataBind()
+        self.present(welcomeVC, animated: true, completion: nil)
+    }
+    
     // MARK: - @objc Methods
     
     @objc
-    private func passwordClearButtonDidTap() {
+    private func clearButtonDidTap() {
         clearButtonClick()
     }
     
     @objc
-    private func passwordSecurityButtonDidTap() {
+    private func securityButtonDidTap() {
         securityButtonClick()
+    }
+    
+    @objc
+    private func loginButtonDidTap() {
+        presentToWelcomeVC()
     }
 }
 
