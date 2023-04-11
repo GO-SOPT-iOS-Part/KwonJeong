@@ -238,6 +238,7 @@ extension SignInViewController {
             case .password:
                 passwordTextField.text = ""
                 passwordTextField.rightViewMode = .never
+                passwordTextField.isSecureTextEntry = true
             case .none:
                 break
             }
