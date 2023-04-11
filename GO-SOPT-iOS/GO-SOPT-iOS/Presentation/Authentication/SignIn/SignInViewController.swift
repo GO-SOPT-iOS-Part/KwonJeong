@@ -12,14 +12,20 @@ import Then
 
 final class SignInViewController: UIViewController {
     
+    enum TextFieldType {
+        case id
+        case password
+        case none
+    }
+    
     // MARK: - UI Components
     
     private let loginLabel = UILabel()
     private let idTextField = UITextField()
     private let passwordTextField = UITextField()
     private let passwordButtonView = UIView()
-    private let passwordClearButton = UIButton()
-    private let passwordSecurityButton = UIButton()
+    private let textFiedClearButton = UIButton()
+    private let textFieldSecurityButton = UIButton()
     private let loginButton = CheckButton()
     private let findIdButton = UIButton()
     private let centerView = UIView()
@@ -29,6 +35,9 @@ final class SignInViewController: UIViewController {
     
     // MARK: - Properties
     
+    var activeTextField: TextFieldType?
+    let maxLength = 15
+    
     // MARK: - Initializer
     
     // MARK: - View Life Cycle
@@ -37,6 +46,7 @@ final class SignInViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setDelegate()
     }
 }
 
@@ -73,18 +83,17 @@ extension SignInViewController {
             $0.textColor = Color.tvingGray2
             $0.layer.cornerRadius = 3
             $0.isSecureTextEntry = true
-//            $0.clearButtonMode = .never
+            $0.clearButtonMode = .never
             $0.rightView = passwordButtonView
-            $0.rightViewMode = .always
             $0.setLeftPaddingPoints(23)
         }
 
-        passwordClearButton.do {
+        textFiedClearButton.do {
             $0.setImage(Image.deleteIcon, for: .normal)
             $0.addTarget(self, action: #selector(passwordClearButtonDidTap), for: .touchUpInside)
         }
 
-        passwordSecurityButton.do {
+        textFieldSecurityButton.do {
             $0.setImage(Image.passwordIcon, for: .normal)
             $0.addTarget(self, action: #selector(passwordSecurityButtonDidTap), for: .touchUpInside)
         }
@@ -133,7 +142,7 @@ extension SignInViewController {
     
     private func setLayout() {
         
-        passwordButtonView.addSubviews(passwordClearButton, passwordSecurityButton)
+        passwordButtonView.addSubviews(textFiedClearButton, textFieldSecurityButton)
         view.addSubviews(loginLabel, idTextField, passwordTextField,
                          loginButton, findIdButton, centerView, findPasswordButton,
                          accountVerificationLabel, createNicknameButton, passwordButtonView)
@@ -160,11 +169,11 @@ extension SignInViewController {
             $0.height.equalTo(20)
         }
         
-        passwordClearButton.snp.makeConstraints {
+        textFiedClearButton.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
         }
         
-        passwordSecurityButton.snp.makeConstraints {
+        textFieldSecurityButton.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.trailing.equalToSuperview().inset(20)
         }
@@ -210,23 +219,120 @@ extension SignInViewController {
     
     // MARK: - Methods
     
-    func clearButtonClick() {
-        print("clearButton")
+    private func setDelegate() {
+        idTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
-    func securityButtonClick() {
-        print("securityButton")
+    private func clearButtonClick() {
+        if let textField = activeTextField {
+            switch textField {
+            case .id:
+                idTextField.text = ""
+            case .password:
+                passwordTextField.text = ""
+            case .none:
+                break
+            }
+        }
+    }
+    
+    private func securityButtonClick() {
+        if passwordTextField.isSecureTextEntry == true {
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            passwordTextField.isSecureTextEntry = true
+        }
+
+    }
+    
+    private func checkTextField(textField: UITextField) -> TextFieldType {
+        switch textField {
+        case idTextField:
+            return .id
+        case passwordTextField:
+            return .password
+        default:
+            return .none
+        }
+    }
+    
+    private func textFieldPlaceholder(textField: TextFieldType) -> String {
+        switch textField {
+        case .id:
+            return "아이디"
+        case .password:
+            return "비밀번호"
+        case .none:
+            return ""
+        }
+    }
+    
+    private func buttonState() {
+        if let firstText = idTextField.text, let secondText = passwordTextField.text,
+           !firstText.isEmpty && !secondText.isEmpty {
+            loginButton.setState(.allow)
+        } else {
+            loginButton.setState(.notAllow)
+        }
     }
     
     // MARK: - @objc Methods
     
     @objc
-    func passwordClearButtonDidTap() {
+    private func passwordClearButtonDidTap() {
         clearButtonClick()
     }
     
     @objc
-    func passwordSecurityButtonDidTap() {
+    private func passwordSecurityButtonDidTap() {
         securityButtonClick()
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension SignInViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.layer.borderColor = Color.tvingGray2.cgColor
+        textField.layer.borderWidth = 1
+        textField.placeholder = .none
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        activeTextField = checkTextField(textField: textField)
+        textField.layer.borderColor = Color.tvingGray2.cgColor
+        textField.layer.borderWidth = 1
+        buttonState()
+        if checkTextField(textField: textField) == .password {
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            passwordButtonView.isHidden = false
+            if newLength >= maxLength {
+                textField.rightViewMode = .always
+            } else {
+                textField.rightViewMode = .never
+            }
+            return newLength <= maxLength
+        }
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        activeTextField = checkTextField(textField: textField)
+        textField.layer.borderColor = .none
+        textField.layer.borderWidth = 1
+        if let activeTextField = activeTextField {
+            textField.placeholder = textFieldPlaceholder(textField: activeTextField)
+        }
+        buttonState()
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
