@@ -30,6 +30,7 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -45,7 +46,6 @@ extension WelcomeViewController {
         }
         
         userNameLabel.do {
-            $0.text = "반가워요!"
             $0.font = UIFont.pretendard(.bold, size: 23)
             $0.textColor = Color.tvingWhite
             $0.textAlignment = .center
@@ -87,5 +87,18 @@ extension WelcomeViewController {
         userNameLabel.text = "\(userName ?? "") 님\n반가워요!"
     }
     
+    private func setAddTarget() {
+        mainButton.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func backToSignInVC() {
+        self.dismiss(animated: true)
+    }
+    
     // MARK: - @objc Methods
+    
+    @objc
+    private func mainButtonDidTap() {
+        backToSignInVC()
+    }
 }
