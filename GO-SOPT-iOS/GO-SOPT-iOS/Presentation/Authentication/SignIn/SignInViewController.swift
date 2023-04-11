@@ -229,8 +229,10 @@ extension SignInViewController {
             switch textField {
             case .id:
                 idTextField.text = ""
+                idTextField.rightViewMode = .never
             case .password:
                 passwordTextField.text = ""
+                passwordTextField.rightViewMode = .never
             case .none:
                 break
             }
