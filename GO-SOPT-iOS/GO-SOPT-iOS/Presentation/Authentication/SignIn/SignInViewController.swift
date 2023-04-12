@@ -38,8 +38,6 @@ final class SignInViewController: UIViewController {
     var activeTextField: TextFieldType?
     let maxLength = 15
     
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -227,6 +225,7 @@ extension SignInViewController {
         textFiedClearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
         textFieldSecurityButton.addTarget(self, action: #selector(securityButtonDidTap), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+        createNicknameButton.addTarget(self, action: #selector(createNicknameButtonDidTap), for: .touchUpInside)
     }
     
     private func clearButtonClick() {
@@ -293,6 +292,18 @@ extension SignInViewController {
         self.present(welcomeVC, animated: true, completion: nil)
     }
     
+    private func presentToCreateNicknameVC() {
+        let createNicknameVC = CreateNicknameViewController()
+        createNicknameVC.modalPresentationStyle = .pageSheet
+        if let sheet = createNicknameVC.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.delegate = self
+            sheet.prefersGrabberVisible = true
+            sheet.preferredCornerRadius = 40
+        }
+        self.present(createNicknameVC, animated: true, completion: nil)
+    }
+    
     // MARK: - @objc Methods
     
     @objc
@@ -308,6 +319,11 @@ extension SignInViewController {
     @objc
     private func loginButtonDidTap() {
         presentToWelcomeVC()
+    }
+    
+    @objc
+    private func createNicknameButtonDidTap() {
+        presentToCreateNicknameVC()
     }
 }
 
@@ -355,5 +371,12 @@ extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension SignInViewController: UISheetPresentationControllerDelegate {
+    
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+        print("크기변경")
     }
 }

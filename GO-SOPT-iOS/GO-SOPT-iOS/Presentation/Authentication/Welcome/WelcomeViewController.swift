@@ -22,8 +22,6 @@ final class WelcomeViewController: UIViewController {
     
     var userName: String?
     
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
