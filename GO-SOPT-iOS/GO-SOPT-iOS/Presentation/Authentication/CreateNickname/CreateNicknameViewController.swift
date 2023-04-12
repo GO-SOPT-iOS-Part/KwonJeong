@@ -18,16 +18,13 @@ final class CreateNicknameViewController: UIViewController {
     private let nicknameTextField = UITextField()
     private let saveButton = CheckButton()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -84,5 +81,18 @@ extension CreateNicknameViewController {
     
     // MARK: - Methods
     
+    private func setAddTarget() {
+        saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func backToSignInVC() {
+        self.dismiss(animated: true)
+    }
+    
     // MARK: - @objc Methods
+    
+    @objc
+    private func saveButtonDidTap() {
+        backToSignInVC()
+    }
 }
