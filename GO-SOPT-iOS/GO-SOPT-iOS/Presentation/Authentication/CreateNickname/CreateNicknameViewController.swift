@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol DataBindProtocol: AnyObject {
+    func dataBind(nickname: String)
+}
+
 final class CreateNicknameViewController: UIViewController {
     
     // MARK: - UI Components
@@ -17,6 +21,10 @@ final class CreateNicknameViewController: UIViewController {
     private let enterNicknameLabel = UILabel()
     private let nicknameTextField = UITextField()
     private let saveButton = CheckButton()
+    
+    // MARK: - Properties
+    
+    weak var delegate: DataBindProtocol?
     
     // MARK: - View Life Cycle
     
@@ -93,6 +101,9 @@ extension CreateNicknameViewController {
     
     @objc
     private func saveButtonDidTap() {
+        if let nickname = nicknameTextField.text {
+            delegate?.dataBind(nickname: nickname)
+        }
         backToSignInVC()
     }
 }

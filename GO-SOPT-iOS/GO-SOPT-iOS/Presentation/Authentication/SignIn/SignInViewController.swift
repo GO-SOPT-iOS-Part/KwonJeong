@@ -37,6 +37,7 @@ final class SignInViewController: UIViewController {
     
     var activeTextField: TextFieldType?
     let maxLength = 15
+    var nickname: String?
     
     // MARK: - View Life Cycle
     
@@ -295,6 +296,7 @@ extension SignInViewController {
     private func presentToCreateNicknameVC() {
         let createNicknameVC = CreateNicknameViewController()
         createNicknameVC.modalPresentationStyle = .pageSheet
+        createNicknameVC.delegate = self
         if let sheet = createNicknameVC.sheetPresentationController {
             sheet.detents = [.medium()]
             sheet.delegate = self
@@ -378,5 +380,12 @@ extension SignInViewController: UISheetPresentationControllerDelegate {
     
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
         print("크기변경")
+    }
+}
+
+extension SignInViewController: DataBindProtocol {
+    
+    func dataBind(nickname: String) {
+        self.nickname = nickname
     }
 }
