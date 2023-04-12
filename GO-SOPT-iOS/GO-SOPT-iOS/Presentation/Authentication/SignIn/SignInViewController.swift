@@ -37,7 +37,7 @@ final class SignInViewController: UIViewController {
     
     var activeTextField: TextFieldType?
     let maxLength = 15
-    var nickname: String?
+    var nickname: String = ""
     
     // MARK: - View Life Cycle
     
@@ -288,8 +288,13 @@ extension SignInViewController {
     private func presentToWelcomeVC() {
         let welcomeVC = WelcomeViewController()
         welcomeVC.modalPresentationStyle = .fullScreen
-        welcomeVC.userName = idTextField.text
-        welcomeVC.setDataBind()
+        if nickname.isEmpty {
+            welcomeVC.userName = idTextField.text
+            welcomeVC.setDataBind()
+        } else {
+            welcomeVC.userName = nickname
+            welcomeVC.setDataBind()
+        }
         self.present(welcomeVC, animated: true, completion: nil)
     }
     
@@ -378,9 +383,6 @@ extension SignInViewController: UITextFieldDelegate {
 
 extension SignInViewController: UISheetPresentationControllerDelegate {
     
-    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
-        print("크기변경")
-    }
 }
 
 extension SignInViewController: DataBindProtocol {
