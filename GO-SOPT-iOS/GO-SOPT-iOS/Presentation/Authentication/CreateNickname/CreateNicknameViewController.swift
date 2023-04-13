@@ -32,6 +32,7 @@ final class CreateNicknameViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setDelegate()
         setAddTarget()
     }
 }
@@ -59,8 +60,9 @@ extension CreateNicknameViewController {
         
         saveButton.do {
             $0.setTitle("저장하기", for: .normal)
-            $0.setState(.allow)
+            $0.setState(.notAllow)
             $0.layer.cornerRadius = 12
+            $0.layer.borderWidth = 0
         }
     }
     
@@ -89,6 +91,10 @@ extension CreateNicknameViewController {
     
     // MARK: - Methods
     
+    private func setDelegate() {
+        nicknameTextField.delegate = self
+    }
+    
     private func setAddTarget() {
         saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
     }
@@ -105,5 +111,18 @@ extension CreateNicknameViewController {
             delegate?.dataBind(nickname: nickname)
         }
         backToSignInVC()
+    }
+}
+
+extension CreateNicknameViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let nicknameText = nicknameTextField.text,
+           !nicknameText.isEmpty {
+            saveButton.setState(.allow)
+        } else {
+            saveButton.setState(.notAllow)
+        }
+        return true
     }
 }
