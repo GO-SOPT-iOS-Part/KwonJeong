@@ -22,6 +22,7 @@ final class SignInViewController: UIViewController {
     
     private let loginLabel = UILabel()
     private let idTextField = UITextField()
+    private let idClearButton = UIButton()
     private let passwordTextField = UITextField()
     private let passwordButtonView = UIView()
     private let textFiedClearButton = UIButton()
@@ -73,6 +74,12 @@ extension SignInViewController {
             $0.textColor = Color.tvingGray2
             $0.layer.cornerRadius = 3
             $0.setLeftPaddingPoints(23)
+            $0.clearButtonMode = .always
+            $0.rightView = idClearButton
+        }
+        
+        idClearButton.do {
+            $0.setImage(Image.deleteIcon, for: .normal)
         }
 
         passwordTextField.do {
@@ -141,7 +148,7 @@ extension SignInViewController {
     private func setLayout() {
         
         passwordButtonView.addSubviews(textFiedClearButton, textFieldSecurityButton)
-        view.addSubviews(loginLabel, idTextField, passwordTextField,
+        view.addSubviews(loginLabel, idTextField, idClearButton, passwordTextField,
                          loginButton, findIdButton, centerView, findPasswordButton,
                          accountVerificationLabel, createNicknameButton, passwordButtonView)
 
@@ -154,6 +161,10 @@ extension SignInViewController {
             $0.top.equalTo(loginLabel.snp.bottom).offset(27)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(52)
+        }
+        
+        idClearButton.snp.makeConstraints {
+            $0.width.height.equalTo(20)
         }
 
         passwordTextField.snp.makeConstraints {
@@ -246,12 +257,7 @@ extension SignInViewController {
     }
     
     private func securityButtonClick() {
-        if passwordTextField.isSecureTextEntry == true {
-            passwordTextField.isSecureTextEntry = false
-        } else {
-            passwordTextField.isSecureTextEntry = true
-        }
-
+        passwordTextField.isSecureTextEntry.toggle()
     }
     
     private func checkTextField(textField: UITextField) -> TextFieldType {
@@ -350,6 +356,7 @@ extension SignInViewController: UITextFieldDelegate {
         textField.layer.borderColor = Color.tvingGray2.cgColor
         textField.layer.borderWidth = 1
         buttonState()
+        // 아 더러워 !! ;; 고치기 ;;
         if checkTextField(textField: textField) == .password {
             guard let text = textField.text else { return true }
             let newLength = text.count + string.count - range.length

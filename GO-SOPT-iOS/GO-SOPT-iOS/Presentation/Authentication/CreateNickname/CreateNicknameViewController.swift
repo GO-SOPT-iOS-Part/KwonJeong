@@ -103,6 +103,10 @@ extension CreateNicknameViewController {
         self.dismiss(animated: true)
     }
     
+    private func saveButtonEnable(textField: UITextField) {
+        saveButton.isEnabled = textField.text!.isOnlyKorean()
+    }
+    
     // MARK: - @objc Methods
     
     @objc
@@ -124,5 +128,9 @@ extension CreateNicknameViewController: UITextFieldDelegate {
             saveButton.setState(.notAllow)
         }
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        saveButtonEnable(textField: textField)
     }
 }
