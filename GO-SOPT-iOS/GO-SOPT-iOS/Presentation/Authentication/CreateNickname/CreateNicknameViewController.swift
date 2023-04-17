@@ -70,6 +70,8 @@ extension CreateNicknameViewController {
             $0.setTitle("저장하기", for: .normal)
             $0.setState(.notAllow)
             $0.layer.cornerRadius = 12
+            $0.backgroundColor = Color.tvingGray2
+            $0.setTitleColor(Color.tvingWhite, for: .normal)
             $0.layer.borderWidth = 0
         }
     }
@@ -139,6 +141,7 @@ extension CreateNicknameViewController: UITextFieldDelegate {
         if let nicknameText = nicknameTextField.text,
            !nicknameText.isEmpty {
             saveButton.setState(.allow)
+            saveButton.layer.borderWidth = 0
         } else {
             saveButton.setState(.notAllow)
         }

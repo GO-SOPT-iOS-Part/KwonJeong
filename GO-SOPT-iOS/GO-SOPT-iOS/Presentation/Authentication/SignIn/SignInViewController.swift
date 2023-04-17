@@ -374,7 +374,6 @@ extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         activeTextField = checkTextField(textField: textField)
         textField.layer.borderColor = .none
-        textField.layer.borderWidth = 1
         if let activeTextField = activeTextField {
             textField.placeholder = textFieldPlaceholder(textField: activeTextField)
         }
