@@ -20,6 +20,7 @@ final class CreateNicknameViewController: UIViewController {
     
     private let enterNicknameLabel = UILabel()
     private let nicknameTextField = UITextField()
+    private let isKoreanLabel = UILabel()
     private let saveButton = CheckButton()
     
     // MARK: - Properties
@@ -58,6 +59,13 @@ extension CreateNicknameViewController {
             $0.setLeftPaddingPoints(24)
         }
         
+        isKoreanLabel.do {
+            $0.text = "* 한글로 입력해주세요."
+            $0.font = UIFont.pretendard(.medium, size: 12)
+            $0.textColor = Color.tvingRed
+            $0.isHidden = true
+        }
+        
         saveButton.do {
             $0.setTitle("저장하기", for: .normal)
             $0.setState(.notAllow)
@@ -69,7 +77,7 @@ extension CreateNicknameViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews(enterNicknameLabel, nicknameTextField, saveButton)
+        view.addSubviews(enterNicknameLabel, nicknameTextField, isKoreanLabel, saveButton)
         
         enterNicknameLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(50)
@@ -80,6 +88,11 @@ extension CreateNicknameViewController {
             $0.top.equalTo(enterNicknameLabel.snp.bottom).offset(21)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(52)
+        }
+        
+        isKoreanLabel.snp.makeConstraints {
+            $0.top.equalTo(nicknameTextField.snp.bottom).offset(7)
+            $0.leading.equalTo(nicknameTextField)
         }
         
         saveButton.snp.makeConstraints {
@@ -103,23 +116,25 @@ extension CreateNicknameViewController {
         self.dismiss(animated: true)
     }
     
-    private func saveButtonEnable(textField: UITextField) {
-        saveButton.isEnabled = textField.text!.isOnlyKorean()
-    }
-    
     // MARK: - @objc Methods
     
     @objc
     private func saveButtonDidTap() {
         if let nickname = nicknameTextField.text {
-            delegate?.dataBind(nickname: nickname)
+            if nickname.isOnlyKorean() {
+                isKoreanLabel.isHidden = true
+                delegate?.dataBind(nickname: nickname)
+                backToSignInVC()
+            }
+            else {
+                isKoreanLabel.isHidden = false
+            }
         }
-        backToSignInVC()
     }
 }
 
 extension CreateNicknameViewController: UITextFieldDelegate {
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let nicknameText = nicknameTextField.text,
            !nicknameText.isEmpty {
@@ -127,10 +142,11 @@ extension CreateNicknameViewController: UITextFieldDelegate {
         } else {
             saveButton.setState(.notAllow)
         }
+        
+        if let nicknameText = nicknameTextField.text,
+           nicknameText.isOnlyKorean() {
+            isKoreanLabel.isHidden = true
+        }
         return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        saveButtonEnable(textField: textField)
     }
 }
