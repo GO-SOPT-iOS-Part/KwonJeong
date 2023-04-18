@@ -289,6 +289,12 @@ extension SignInViewController {
         }
     }
     
+    private func textFieldBorderSetting(textField: UITextField) {
+        textField.layer.borderColor = Color.tvingGray2.cgColor
+        textField.layer.borderWidth = 1
+        textField.placeholder = .none
+    }
+    
     private func textFieldButtonState(textField: UITextField, length: Int) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = length + text.count
@@ -375,16 +381,12 @@ extension SignInViewController {
 extension SignInViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.layer.borderColor = Color.tvingGray2.cgColor
-        textField.layer.borderWidth = 1
-        textField.placeholder = .none
+        textFieldBorderSetting(textField: textField)
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        activeTextField = checkTextField(textField: textField)
-        textField.layer.borderColor = Color.tvingGray2.cgColor
-        textField.layer.borderWidth = 1
+        textFieldBorderSetting(textField: textField)
         buttonState()
         let length = string.count - range.length
         return textFieldButtonState(textField: textField, length: length)
