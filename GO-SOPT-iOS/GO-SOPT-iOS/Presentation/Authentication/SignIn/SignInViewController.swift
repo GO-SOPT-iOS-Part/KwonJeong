@@ -23,6 +23,7 @@ final class SignInViewController: UIViewController {
     private let loginLabel = UILabel()
     private let idTextField = UITextField()
     private let idClearButton = UIButton()
+    private let idButtonView = UIView()
     private let passwordTextField = UITextField()
     private let passwordButtonView = UIView()
     private let textFiedClearButton = UIButton()
@@ -73,9 +74,9 @@ extension SignInViewController {
             $0.font = UIFont.pretendard(.semibold, size: 15)
             $0.textColor = Color.tvingGray2
             $0.layer.cornerRadius = 3
+            $0.clearButtonMode = .never
+            $0.rightView = idButtonView
             $0.setLeftPaddingPoints(23)
-            $0.clearButtonMode = .always
-            $0.rightView = idClearButton
         }
         
         idClearButton.do {
@@ -147,10 +148,11 @@ extension SignInViewController {
     
     private func setLayout() {
         
+        idButtonView.addSubviews(idClearButton)
         passwordButtonView.addSubviews(textFiedClearButton, textFieldSecurityButton)
-        view.addSubviews(loginLabel, idTextField, idClearButton, passwordTextField,
-                         loginButton, findIdButton, centerView, findPasswordButton,
-                         accountVerificationLabel, createNicknameButton, passwordButtonView)
+        view.addSubviews(loginLabel, idTextField, passwordTextField, loginButton,
+                         findIdButton, centerView, findPasswordButton, accountVerificationLabel,
+                         createNicknameButton, idButtonView, passwordButtonView)
 
         loginLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(46)
@@ -163,10 +165,15 @@ extension SignInViewController {
             $0.height.equalTo(52)
         }
         
-        idClearButton.snp.makeConstraints {
-            $0.width.height.equalTo(20)
+        idButtonView.snp.makeConstraints {
+            $0.width.equalTo(40)
+            $0.height.equalTo(20)
         }
-
+        
+        idClearButton.snp.makeConstraints {
+            $0.top.leading.equalToSuperview()
+        }
+        
         passwordTextField.snp.makeConstraints {
             $0.top.equalTo(idTextField.snp.bottom).offset(11)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
@@ -282,6 +289,29 @@ extension SignInViewController {
         }
     }
     
+    private func textFieldButtonState(textField: UITextField, length: Int) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = length + text.count
+        switch checkTextField(textField: textField) {
+        case .id:
+            if newLength >= 1 {
+                textField.rightViewMode = .always
+            } else {
+                textField.rightViewMode = .never
+            }
+            return true
+        case .password:
+            if newLength >= maxLength {
+                textField.rightViewMode = .always
+            } else {
+                textField.rightViewMode = .never
+            }
+            return newLength <= maxLength
+        default:
+            return true
+        }
+    }
+    
     private func buttonState() {
         if let firstText = idTextField.text, let secondText = passwordTextField.text,
            !firstText.isEmpty && !secondText.isEmpty {
@@ -356,19 +386,8 @@ extension SignInViewController: UITextFieldDelegate {
         textField.layer.borderColor = Color.tvingGray2.cgColor
         textField.layer.borderWidth = 1
         buttonState()
-        // 아 더러워 !! ;; 고치기 ;;
-        if checkTextField(textField: textField) == .password {
-            guard let text = textField.text else { return true }
-            let newLength = text.count + string.count - range.length
-            passwordButtonView.isHidden = false
-            if newLength >= maxLength {
-                textField.rightViewMode = .always
-            } else {
-                textField.rightViewMode = .never
-            }
-            return newLength <= maxLength
-        }
-        return true
+        let length = string.count - range.length
+        return textFieldButtonState(textField: textField, length: length)
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
