@@ -241,26 +241,22 @@ extension SignInViewController {
     }
     
     private func setAddTarget() {
-        textFiedClearButton.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
+        idClearButton.addTarget(self, action: #selector(idClearButtonDidTap), for: .touchUpInside)
+        textFiedClearButton.addTarget(self, action: #selector(passwordClearButtonDidTap), for: .touchUpInside)
         textFieldSecurityButton.addTarget(self, action: #selector(securityButtonDidTap), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         createNicknameButton.addTarget(self, action: #selector(createNicknameButtonDidTap), for: .touchUpInside)
     }
     
-    private func clearButtonClick() {
-        if let textField = activeTextField {
-            switch textField {
-            case .id:
-                idTextField.text = ""
-                idTextField.rightViewMode = .never
-            case .password:
-                passwordTextField.text = ""
-                passwordTextField.rightViewMode = .never
-                passwordTextField.isSecureTextEntry = true
-            case .none:
-                break
-            }
-        }
+    private func idClearButtonClick() {
+        idTextField.text?.removeAll()
+        idTextField.rightViewMode = .never
+    }
+    
+    private func passwordClearButtonClick() {
+        passwordTextField.text?.removeAll()
+        passwordTextField.rightViewMode = .never
+        passwordTextField.isSecureTextEntry = true
     }
     
     private func securityButtonClick() {
@@ -356,8 +352,13 @@ extension SignInViewController {
     // MARK: - @objc Methods
     
     @objc
-    private func clearButtonDidTap() {
-        clearButtonClick()
+    private func idClearButtonDidTap() {
+        idClearButtonClick()
+    }
+    
+    @objc
+    private func passwordClearButtonDidTap() {
+        passwordClearButtonClick()
     }
     
     @objc
