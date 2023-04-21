@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371AEA429EEABD80036932B /* UIViewController +.swift */; };
+		03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */; };
+		03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA029E3F2E100B4F2A2 /* UITextField +.swift */; };
+		03753BA329E3F2FA00B4F2A2 /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA229E3F2FA00B4F2A2 /* UIButton +.swift */; };
+		03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA529E3F36400B4F2A2 /* CheckButton.swift */; };
+		03753BAF29E403FA00B4F2A2 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAB29E403FA00B4F2A2 /* Pretendard-SemiBold.otf */; };
+		03753BB029E403FA00B4F2A2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAC29E403FA00B4F2A2 /* Pretendard-Regular.otf */; };
+		03753BB129E403FA00B4F2A2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */; };
+		03753BB229E403FA00B4F2A2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */; };
+		03753BB529E4051B00B4F2A2 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 03753BB429E4051B00B4F2A2 /* Inject */; };
+		03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */; };
+		03753BBB29E686C600B4F2A2 /* CreateNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BBA29E686C600B4F2A2 /* CreateNicknameViewController.swift */; };
+		03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BBC29E9A80C00B4F2A2 /* String +.swift */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -17,9 +30,26 @@
 		03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */; };
 		03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E6929DB06AD002BF3E0 /* UIView +.swift */; };
 		03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E6B29DB0F07002BF3E0 /* SecondViewController.swift */; };
+		03CD4E8929E294DF002BF3E0 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E8829E294DF002BF3E0 /* Image.xcassets */; };
+		03CD4E8B29E294E8002BF3E0 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E8A29E294E8002BF3E0 /* Color.xcassets */; };
+		03CD4E8E29E2950A002BF3E0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E8D29E2950A002BF3E0 /* Image.swift */; };
+		03CD4E9029E29511002BF3E0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E8F29E29511002BF3E0 /* Color.swift */; };
+		03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0371AEA429EEABD80036932B /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
+		03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		03753BA029E3F2E100B4F2A2 /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
+		03753BA229E3F2FA00B4F2A2 /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
+		03753BA529E3F36400B4F2A2 /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
+		03753BAB29E403FA00B4F2A2 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		03753BAC29E403FA00B4F2A2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		03753BBA29E686C600B4F2A2 /* CreateNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewController.swift; sourceTree = "<group>"; };
+		03753BBC29E9A80C00B4F2A2 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +60,11 @@
 		03CD4E6529DB04B3002BF3E0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		03CD4E6929DB06AD002BF3E0 /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
 		03CD4E6B29DB0F07002BF3E0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		03CD4E8829E294DF002BF3E0 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		03CD4E8A29E294E8002BF3E0 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		03CD4E8D29E2950A002BF3E0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		03CD4E8F29E29511002BF3E0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont +.swift"; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +74,45 @@
 			files = (
 				03CD4E6129DB047A002BF3E0 /* SnapKit in Frameworks */,
 				03CD4E6429DB0485002BF3E0 /* Then in Frameworks */,
+				03753BB529E4051B00B4F2A2 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03753B9F29E3EDD700B4F2A2 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		03753BA429E3F34D00B4F2A2 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				03753BA529E3F36400B4F2A2 /* CheckButton.swift */,
+			);
+			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		03753BB629E5B26600B4F2A2 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		03753BB929E6869D00B4F2A2 /* CreateNickname */ = {
+			isa = PBXGroup;
+			children = (
+				03753BBA29E686C600B4F2A2 /* CreateNicknameViewController.swift */,
+			);
+			path = CreateNickname;
+			sourceTree = "<group>";
+		};
 		03CD4E3A29DAFE76002BF3E0 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +136,7 @@
 				03CD4E5B29DB0309002BF3E0 /* Presentation */,
 				03CD4E5D29DB0386002BF3E0 /* Resource */,
 				03CD4E6729DB0685002BF3E0 /* Util */,
+				03CD4E5C29DB0317002BF3E0 /* 1st_Seminar */,
 				03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */,
 				03CD4E5429DAFE76002BF3E0 /* Info.plist */,
 			);
@@ -86,7 +155,7 @@
 		03CD4E5B29DB0309002BF3E0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				03CD4E5C29DB0317002BF3E0 /* 1st_Seminar */,
+				03CD4E9129E29712002BF3E0 /* Authentication */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -103,6 +172,7 @@
 		03CD4E5D29DB0386002BF3E0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				03CD4E9229E29A32002BF3E0 /* Font */,
 				03CD4E5E29DB039E002BF3E0 /* AssetCatalog */,
 				03CD4E5129DAFE76002BF3E0 /* LaunchScreen.storyboard */,
 			);
@@ -113,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				03CD4E4F29DAFE76002BF3E0 /* Assets.xcassets */,
+				03CD4E8829E294DF002BF3E0 /* Image.xcassets */,
+				03CD4E8A29E294E8002BF3E0 /* Color.xcassets */,
 			);
 			path = AssetCatalog;
 			sourceTree = "<group>";
@@ -120,7 +192,9 @@
 		03CD4E6729DB0685002BF3E0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				03753BA429E3F34D00B4F2A2 /* CustomClass */,
 				03CD4E6829DB068B002BF3E0 /* Extension */,
+				03CD4E8C29E294F2002BF3E0 /* NameSpace */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -129,8 +203,51 @@
 			isa = PBXGroup;
 			children = (
 				03CD4E6929DB06AD002BF3E0 /* UIView +.swift */,
+				03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */,
+				03753BA029E3F2E100B4F2A2 /* UITextField +.swift */,
+				03753BA229E3F2FA00B4F2A2 /* UIButton +.swift */,
+				03753BBC29E9A80C00B4F2A2 /* String +.swift */,
+				0371AEA429EEABD80036932B /* UIViewController +.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		03CD4E8C29E294F2002BF3E0 /* NameSpace */ = {
+			isa = PBXGroup;
+			children = (
+				03CD4E8D29E2950A002BF3E0 /* Image.swift */,
+				03CD4E8F29E29511002BF3E0 /* Color.swift */,
+			);
+			path = NameSpace;
+			sourceTree = "<group>";
+		};
+		03CD4E9129E29712002BF3E0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				03753B9F29E3EDD700B4F2A2 /* SignIn */,
+				03753BB629E5B26600B4F2A2 /* Welcome */,
+				03753BB929E6869D00B4F2A2 /* CreateNickname */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		03CD4E9229E29A32002BF3E0 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				03CD4E9329E29A3B002BF3E0 /* Pretendard */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		03CD4E9329E29A3B002BF3E0 /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				03753BAE29E403FA00B4F2A2 /* Pretendard-Bold.otf */,
+				03753BAD29E403FA00B4F2A2 /* Pretendard-Medium.otf */,
+				03753BAC29E403FA00B4F2A2 /* Pretendard-Regular.otf */,
+				03753BAB29E403FA00B4F2A2 /* Pretendard-SemiBold.otf */,
+			);
+			path = Pretendard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +269,7 @@
 			packageProductDependencies = (
 				03CD4E6029DB047A002BF3E0 /* SnapKit */,
 				03CD4E6329DB0485002BF3E0 /* Then */,
+				03753BB429E4051B00B4F2A2 /* Inject */,
 			);
 			productName = "GO-SOPT-iOS";
 			productReference = 03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */;
@@ -184,6 +302,7 @@
 			packageReferences = (
 				03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				03CD4E6229DB0485002BF3E0 /* XCRemoteSwiftPackageReference "Then" */,
+				03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */,
 			);
 			productRefGroup = 03CD4E4429DAFE76002BF3E0 /* Products */;
 			projectDirPath = "";
@@ -200,7 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CD4E5329DAFE76002BF3E0 /* LaunchScreen.storyboard in Resources */,
+				03CD4E8929E294DF002BF3E0 /* Image.xcassets in Resources */,
+				03CD4E8B29E294E8002BF3E0 /* Color.xcassets in Resources */,
+				03753BB129E403FA00B4F2A2 /* Pretendard-Medium.otf in Resources */,
+				03753BAF29E403FA00B4F2A2 /* Pretendard-SemiBold.otf in Resources */,
+				03753BB029E403FA00B4F2A2 /* Pretendard-Regular.otf in Resources */,
 				03CD4E5029DAFE76002BF3E0 /* Assets.xcassets in Resources */,
+				03753BB229E403FA00B4F2A2 /* Pretendard-Bold.otf in Resources */,
 				03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,10 +337,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03753BBB29E686C600B4F2A2 /* CreateNicknameViewController.swift in Sources */,
 				03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */,
+				03CD4E8E29E2950A002BF3E0 /* Image.swift in Sources */,
+				03CD4E9029E29511002BF3E0 /* Color.swift in Sources */,
 				03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */,
+				03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */,
+				03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */,
+				03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
 				03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */,
+				03753BA329E3F2FA00B4F2A2 /* UIButton +.swift in Sources */,
+				0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */,
+				03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */,
+				03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */,
+				03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */,
 				03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +512,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-Xlinker-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kwonjeong.GO-SOPT-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -404,6 +548,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-Xlinker-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kwonjeong.GO-SOPT-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -436,6 +588,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -455,6 +615,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		03753BB429E4051B00B4F2A2 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
 		03CD4E6029DB047A002BF3E0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */;
