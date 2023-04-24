@@ -130,6 +130,7 @@ extension CreateNicknameViewController {
             }
             else {
                 isKoreanLabel.isHidden = false
+                saveButton.shakeButton()
             }
         }
     }
