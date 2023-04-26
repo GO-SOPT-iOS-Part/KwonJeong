@@ -18,4 +18,15 @@ extension UIButton {
         )
         setAttributedTitle(attributedString, for: .normal)
     }
+    
+    func shakeButton() {
+        self.transform = CGAffineTransform(translationX: 0, y: 20)
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 1,
+                       options: [.curveEaseOut]) {
+            self.transform = .identity
+        }
+    }
 }
