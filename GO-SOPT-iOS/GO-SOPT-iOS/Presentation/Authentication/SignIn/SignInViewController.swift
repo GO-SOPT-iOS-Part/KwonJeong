@@ -43,6 +43,12 @@ final class SignInViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.idTextField.text?.removeAll()
+        self.passwordTextField.text = ""
+        self.nickname = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
