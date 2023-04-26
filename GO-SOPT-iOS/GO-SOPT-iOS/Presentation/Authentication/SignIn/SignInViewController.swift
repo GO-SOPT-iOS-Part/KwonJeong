@@ -43,6 +43,12 @@ final class SignInViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.idTextField.text?.removeAll()
+        self.passwordTextField.text = ""
+        self.nickname = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -333,7 +339,13 @@ extension SignInViewController {
             welcomeVC.userName = nickname
             welcomeVC.setDataBind()
         }
-        self.present(welcomeVC, animated: true, completion: nil)
+
+        guard let id = idTextField.text else { return }
+        if id.isValidEmail() {
+            self.present(welcomeVC, animated: true, completion: nil)
+        } else {
+            self.showAlert(alertText: "이메일 형식이 올바르지 않습니다.", alertMessage: "다시 입력해 주세요.")
+        }
     }
     
     private func presentToCreateNicknameVC() {
