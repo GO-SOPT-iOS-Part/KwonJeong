@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036A1C1529FA5B2000B33403 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A1C1429FA5B2000B33403 /* BaseViewController.swift */; };
+		036A1C1829FA64D100B33403 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A1C1729FA64D100B33403 /* MyProfileViewController.swift */; };
 		0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371AEA429EEABD80036932B /* UIViewController +.swift */; };
 		03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */; };
 		03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA029E3F2E100B4F2A2 /* UITextField +.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		036A1C1429FA5B2000B33403 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		036A1C1729FA64D100B33403 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		0371AEA429EEABD80036932B /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		03753BA029E3F2E100B4F2A2 /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
@@ -81,6 +85,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		036A1C1029FA594400B33403 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		036A1C1129FA5A3100B33403 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				036A1C1629FA649400B33403 /* ViewController */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		036A1C1229FA5AE200B33403 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				036A1C1329FA5AF800B33403 /* ViewController */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		036A1C1329FA5AF800B33403 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				036A1C1429FA5B2000B33403 /* BaseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		036A1C1629FA649400B33403 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				036A1C1729FA64D100B33403 /* MyProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		03753B9F29E3EDD700B4F2A2 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +198,10 @@
 		03CD4E5B29DB0309002BF3E0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				036A1C1229FA5AE200B33403 /* Common */,
 				03CD4E9129E29712002BF3E0 /* Authentication */,
+				036A1C1029FA594400B33403 /* Main */,
+				036A1C1129FA5A3100B33403 /* MyProfile */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -344,10 +390,12 @@
 				03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */,
 				03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */,
 				03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */,
+				036A1C1529FA5B2000B33403 /* BaseViewController.swift in Sources */,
 				03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
 				03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */,
 				03753BA329E3F2FA00B4F2A2 /* UIButton +.swift in Sources */,
+				036A1C1829FA64D100B33403 /* MyProfileViewController.swift in Sources */,
 				0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */,
 				03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */,
 				03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */,
