@@ -44,7 +44,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension BaseViewController {
     
     // MARK: - UI Components Property
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		036A1C1529FA5B2000B33403 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A1C1429FA5B2000B33403 /* BaseViewController.swift */; };
 		036A1C1829FA64D100B33403 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A1C1729FA64D100B33403 /* MyProfileViewController.swift */; };
+		036A1C1B29FA769E00B33403 /* UIStackView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A1C1A29FA769E00B33403 /* UIStackView +.swift */; };
 		0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371AEA429EEABD80036932B /* UIViewController +.swift */; };
 		03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */; };
 		03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA029E3F2E100B4F2A2 /* UITextField +.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		036A1C1429FA5B2000B33403 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		036A1C1729FA64D100B33403 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		036A1C1A29FA769E00B33403 /* UIStackView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView +.swift"; sourceTree = "<group>"; };
 		0371AEA429EEABD80036932B /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		03753BA029E3F2E100B4F2A2 /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				03753BA229E3F2FA00B4F2A2 /* UIButton +.swift */,
 				03753BBC29E9A80C00B4F2A2 /* String +.swift */,
 				0371AEA429EEABD80036932B /* UIViewController +.swift */,
+				036A1C1A29FA769E00B33403 /* UIStackView +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */,
 				03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */,
 				03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */,
+				036A1C1B29FA769E00B33403 /* UIStackView +.swift in Sources */,
 				03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

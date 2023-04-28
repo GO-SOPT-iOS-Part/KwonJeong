@@ -7,6 +7,8 @@
 
 import UIKit
 
+let largeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
+
 public enum Image {
     
     // MARK: - Authentication
@@ -36,4 +38,10 @@ public enum Image {
     public static let notificationImg = UIImage(named: "notification")!
     public static let settingImg = UIImage(named: "setting")!
     public static let tvingCacheImg = UIImage(named: "tvingCache")!
+    
+    
+    // MARK: - Asset
+    
+    public static let setting = UIImage(systemName: "gearshape", withConfiguration: largeConfig)!
+    public static let notification = UIImage(systemName: "bell", withConfiguration: largeConfig)
 }
