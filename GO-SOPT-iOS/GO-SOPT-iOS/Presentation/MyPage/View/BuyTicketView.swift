@@ -48,7 +48,7 @@ extension BuyTicketView {
         }
         
         buyTicketLabel.do {
-            let firstString = NSMutableAttributedString(string: "이용권을 구매하고 ")
+            let firstString = NSMutableAttributedString(string: "이용권을 구매하고  ")
             let logoImg = NSAttributedString(attachment: subscriptionAttach)
             let secondString = NSAttributedString(string: " 등 인기 TV프로그램과\n다양한 영화 콘텐츠를 자유롭게 시청하세요!")
             $0.labelWithImg(composition: firstString, logoImg, secondString, spacing: 7)
@@ -56,18 +56,28 @@ extension BuyTicketView {
             $0.font = UIFont.pretendard(.semibold, size: 12)
             $0.numberOfLines = 2
         }
+        
+        buyTicketButton.do {
+            $0.setImage(Image.RightArrow, for: .normal)
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
-        addSubviews(buyTicketLabel)
+        addSubviews(buyTicketLabel, buyTicketButton)
         
         buyTicketLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(11)
             $0.leading.equalToSuperview().inset(18)
             $0.height.equalTo(38)
+        }
+        
+        buyTicketButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(13)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(18)
         }
     }
     
