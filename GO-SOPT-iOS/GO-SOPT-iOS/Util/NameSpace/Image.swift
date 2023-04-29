@@ -7,7 +7,8 @@
 
 import UIKit
 
-let largeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
+let largeConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .regular, scale: .default)
+let mediumConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .regular, scale: .default)
 
 public enum Image {
     
@@ -37,11 +38,12 @@ public enum Image {
     public static let myTicketImg = UIImage(named: "myTicket")!
     public static let notificationImg = UIImage(named: "notification")!
     public static let settingImg = UIImage(named: "setting")!
-    public static let tvingCacheImg = UIImage(named: "tvingCache")!
-    
+    public static let logoImg = UIImage(named: "logoImg")!
     
     // MARK: - Asset
     
     public static let setting = UIImage(systemName: "gearshape", withConfiguration: largeConfig)!
-    public static let notification = UIImage(systemName: "bell", withConfiguration: largeConfig)
+    public static let notification = UIImage(systemName: "bell", withConfiguration: largeConfig)!
+    public static let myTicket = UIImage(systemName: "ticket", withConfiguration: mediumConfig)!
+    public static let cash = UIImage(systemName: "c.circle", withConfiguration: mediumConfig)!
 }

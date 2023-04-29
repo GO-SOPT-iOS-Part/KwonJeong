@@ -10,13 +10,14 @@ import UIKit
 import SnapKit
 import Then
 
-final class MyProfileViewController: BaseViewController {
+final class MyPageViewController: BaseViewController {
     
     // MARK: - UI Components
     
     private let navigationStackView = UIStackView()
     private let notificationButton = UIButton()
     private let settingButton = UIButton()
+    private let myPageView = MyPageView()
     
     // MARK: - Properties
     
@@ -29,11 +30,12 @@ final class MyProfileViewController: BaseViewController {
         setUI()
         setLayout()
         setNavigationBar()
-//        navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        navigationController?.interactivePopGestureRecognizer?.delegate = self)
+        
     }
 }
 
-extension MyProfileViewController {
+extension MyPageViewController {
     
     // MARK: - UI Components Property
     
@@ -54,24 +56,29 @@ extension MyProfileViewController {
         settingButton.do {
             $0.setImage(Image.setting, for: .normal)
         }
-        
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
+        view.addSubviews(myPageView)
+        
         navigationStackView.snp.makeConstraints {
-            $0.width.equalTo(70)
-            $0.height.equalTo(30)
+            $0.width.equalTo(62)
+            $0.height.equalTo(23)
         }
         
         notificationButton.snp.makeConstraints {
-            $0.width.height.equalTo(30)
+            $0.width.height.equalTo(23)
         }
 
         settingButton.snp.makeConstraints {
-            $0.width.height.equalTo(30)
+            $0.width.height.equalTo(23)
+        }
+        
+        myPageView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -87,6 +94,9 @@ extension MyProfileViewController {
 //        let settingItem = UIBarButtonItem(image: Image.settingImg, style: .plain, target: self, action: nil)
 //        navigationItem.rightBarButtonItems = [settingItem, notificationItem]
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: navigationStackView)
+//        navigationController?.navigationBar.backgroundColor = Color.tvingBlack
+        
+        
     }
     
     // MARK: - @objc Methods
