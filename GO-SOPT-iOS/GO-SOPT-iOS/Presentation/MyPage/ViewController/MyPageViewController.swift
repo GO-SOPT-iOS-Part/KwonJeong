@@ -41,6 +41,8 @@ extension MyPageViewController {
     
     private func setUI() {
         
+        view.backgroundColor = Color.tvingBlack
+        
         navigationStackView.do {
             $0.addArrangedSubviews(notificationButton, settingButton)
             $0.isLayoutMarginsRelativeArrangement = true

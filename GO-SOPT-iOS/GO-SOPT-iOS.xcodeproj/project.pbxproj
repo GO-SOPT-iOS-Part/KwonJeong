@@ -33,6 +33,8 @@
 		03983A9229FE74D500E5539D /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9129FE74D500E5539D /* UITableView +.swift */; };
 		03983A9429FE74F300E5539D /* UICollectionView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9329FE74F300E5539D /* UICollectionView +.swift */; };
 		03983A9629FE750B00E5539D /* NSObject +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9529FE750B00E5539D /* NSObject +.swift */; };
+		03983A9829FE7F2700E5539D /* SectionLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9729FE7F2700E5539D /* SectionLineView.swift */; };
+		03983A9A29FE81C700E5539D /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9929FE81C700E5539D /* LogoutButtonView.swift */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		03983A9129FE74D500E5539D /* UITableView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView +.swift"; sourceTree = "<group>"; };
 		03983A9329FE74F300E5539D /* UICollectionView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView +.swift"; sourceTree = "<group>"; };
 		03983A9529FE750B00E5539D /* NSObject +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject +.swift"; sourceTree = "<group>"; };
+		03983A9729FE7F2700E5539D /* SectionLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLineView.swift; sourceTree = "<group>"; };
+		03983A9929FE81C700E5539D /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				036A1C1D29FBDABF00B33403 /* MyProfileView.swift */,
 				036A1C2629FBF90900B33403 /* MyTicketView.swift */,
 				036A1C2829FC12C700B33403 /* BuyTicketView.swift */,
+				03983A9729FE7F2700E5539D /* SectionLineView.swift */,
+				03983A9929FE81C700E5539D /* LogoutButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -448,7 +454,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03983A9A29FE81C700E5539D /* LogoutButtonView.swift in Sources */,
 				03983A9029FE6D7B00E5539D /* MyPageListModel.swift in Sources */,
+				03983A9829FE7F2700E5539D /* SectionLineView.swift in Sources */,
 				036A1C1E29FBDABF00B33403 /* MyProfileView.swift in Sources */,
 				03983A9429FE74F300E5539D /* UICollectionView +.swift in Sources */,
 				03753BBB29E686C600B4F2A2 /* CreateNicknameViewController.swift in Sources */,

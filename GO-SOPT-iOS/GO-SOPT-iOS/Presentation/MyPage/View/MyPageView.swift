@@ -18,10 +18,9 @@ final class MyPageView: UIScrollView {
     private let myProfileView = MyProfileView()
     private let myTicketView = MyTicketView()
     private let buyTicketView = BuyTicketView()
-    private let myPageTableView = UITableView(frame: .zero, style: .plain)
+    private let myPageTableView = UITableView(frame: .zero, style: .grouped)
     private let firstDummy = MyPageListModel.firstmyPageListdummyData()
     private let secondDummy = MyPageListModel.secondmyPageListdummyData()
-//    private let testView = UIView()
     
     // MARK: - Properties
     
@@ -48,7 +47,7 @@ extension MyPageView {
     
     private func setUI() {
         
-        backgroundColor = .clear
+        backgroundColor = Color.tvingBlack
         
         myPageStackView.do {
             $0.axis = .vertical
@@ -65,19 +64,19 @@ extension MyPageView {
             $0.layer.cornerRadius = 5
         }
         
-//        testView.do {
-//            $0.backgroundColor = Color.tvingBlack
-//        }
-        
         myPageTableView.do {
             $0.translatesAutoresizingMaskIntoConstraints = false
 //            $0.isScrollEnabled = false
             $0.showsVerticalScrollIndicator = false
-            $0.backgroundColor = .blue
-            $0.rowHeight = UITableView.automaticDimension
-            $0.bounces = false
-            $0.contentInsetAdjustmentBehavior = .never
+            $0.backgroundColor = Color.tvingBlack
+            $0.isScrollEnabled = false
+//            $0.rowHeight = UITableView.automaticDimension
+//            $0.bounces = false
+//            $0.contentInsetAdjustmentBehavior = .never
+//            $0.sectionFooterHeight = .leastNormalMagnitude
             $0.registerCell(MyPageTableViewCell.self)
+            $0.registerReusableView(SectionLineView.self)
+            $0.registerReusableView(LogoutButtonView.self)
         }
     }
     
@@ -110,15 +109,8 @@ extension MyPageView {
             $0.top.equalTo(myPageStackView.snp.bottom).offset(24)
             $0.leading.trailing.equalTo(safeAreaLayoutGuide)
             $0.bottom.equalToSuperview().inset(50)
-            $0.height.equalTo(500)
+            $0.height.equalTo(617)
         }
-        
-//        testView.snp.makeConstraints {
-//            $0.top.equalTo(myPageStackView.snp.bottom)
-//            $0.leading.trailing.equalTo(safeAreaLayoutGuide)
-//            $0.height.equalTo(500)
-//            $0.bottom.equalToSuperview().offset(-40)
-//        }
     }
     
     // MARK: - Methods
@@ -163,15 +155,45 @@ extension MyPageView: UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let lineView = myPageTableView.dequeueReusableView(type: SectionLineView.self)
+        return lineView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch (section) {
+        case 1:
+            return 32
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let logoutButton = myPageTableView.dequeueReusableView(type: LogoutButtonView.self)
+        return logoutButton
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch (section) {
+        case 1:
+            return 100
+        default:
+            return 0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch (indexPath.section) {
         case 0:
             let cell = myPageTableView.dequeueCell(type: MyPageTableViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: firstDummy[indexPath.item])
+            cell.selectionStyle = .none
             return cell
         case 1:
             let cell = myPageTableView.dequeueCell(type: MyPageTableViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: secondDummy[indexPath.item])
+            cell.selectionStyle = .none
             return cell
         default:
             let cell = UITableViewCell()
