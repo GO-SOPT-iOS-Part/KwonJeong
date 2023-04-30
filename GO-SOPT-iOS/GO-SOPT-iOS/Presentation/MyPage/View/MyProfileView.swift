@@ -18,10 +18,6 @@ final class MyProfileView: UIView {
     private let profileName = UILabel()
     private lazy var profileSwitchButton = UIButton()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override init(frame: CGRect) {
@@ -92,8 +88,4 @@ extension MyProfileView {
             $0.height.equalTo(25)
         }
     }
-    
-    // MARK: - Methods
-    
-    // MARK: - @objc Methods
 }

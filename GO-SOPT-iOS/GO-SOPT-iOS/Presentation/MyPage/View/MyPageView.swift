@@ -66,14 +66,9 @@ extension MyPageView {
         
         myPageTableView.do {
             $0.translatesAutoresizingMaskIntoConstraints = false
-//            $0.isScrollEnabled = false
             $0.showsVerticalScrollIndicator = false
             $0.backgroundColor = Color.tvingBlack
             $0.isScrollEnabled = false
-//            $0.rowHeight = UITableView.automaticDimension
-//            $0.bounces = false
-//            $0.contentInsetAdjustmentBehavior = .never
-//            $0.sectionFooterHeight = .leastNormalMagnitude
             $0.registerCell(MyPageTableViewCell.self)
             $0.registerReusableView(SectionLineView.self)
             $0.registerReusableView(LogoutButtonView.self)
@@ -121,7 +116,6 @@ extension MyPageView {
     }
     
     private func setNavigationBarColor() {
-        
         if #available(iOS 15, *) {
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithOpaqueBackground()
@@ -134,8 +128,6 @@ extension MyPageView {
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
     }
-    
-    // MARK: - @objc Methods
 }
 
 extension MyPageView: UITableViewDataSource {

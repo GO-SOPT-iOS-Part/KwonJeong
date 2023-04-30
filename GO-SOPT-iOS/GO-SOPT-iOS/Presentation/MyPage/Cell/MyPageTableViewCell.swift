@@ -17,10 +17,6 @@ final class MyPageTableViewCell: UITableViewCell {
     private let listLabel = UILabel()
     private let listButton = UIButton()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -75,6 +71,4 @@ extension MyPageTableViewCell {
     func setDataBind(model: MyPageListModel) {
         listLabel.text = model.list
     }
-    
-    // MARK: - @objc Methods
 }

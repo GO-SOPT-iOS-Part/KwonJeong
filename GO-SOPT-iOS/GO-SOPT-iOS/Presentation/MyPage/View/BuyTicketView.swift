@@ -17,11 +17,7 @@ final class BuyTicketView: UIView {
     private let buyTicketLabel = UILabel()
     private let subscriptionAttach = NSTextAttachment()
     private lazy var buyTicketButton = UIButton()
-    
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
+
     // MARK: - View Life Cycle
     
     override init(frame: CGRect) {
@@ -80,8 +76,4 @@ extension BuyTicketView {
             $0.width.height.equalTo(18)
         }
     }
-    
-    // MARK: - Methods
-    
-    // MARK: - @objc Methods
 }

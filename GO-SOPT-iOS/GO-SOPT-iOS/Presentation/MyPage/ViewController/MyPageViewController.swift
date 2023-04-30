@@ -19,10 +19,6 @@ final class MyPageViewController: BaseViewController {
     private let settingButton = UIButton()
     private let myPageView = MyPageView()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -92,14 +88,6 @@ extension MyPageViewController {
         navigationController?.navigationBar.tintColor = Color.tvingWhite
         navigationItem.leftBarButtonItem = UIBarButtonItem (
             image: Image.backButtonIcon, style: .plain, target: self, action: nil )
-//        let notificationItem = UIBarButtonItem(image: Image.notificationImg, style: .plain, target: self, action: nil)
-//        let settingItem = UIBarButtonItem(image: Image.settingImg, style: .plain, target: self, action: nil)
-//        navigationItem.rightBarButtonItems = [settingItem, notificationItem]
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: navigationStackView)
-//        navigationController?.navigationBar.backgroundColor = Color.tvingBlack
-        
-        
     }
-    
-    // MARK: - @objc Methods
 }

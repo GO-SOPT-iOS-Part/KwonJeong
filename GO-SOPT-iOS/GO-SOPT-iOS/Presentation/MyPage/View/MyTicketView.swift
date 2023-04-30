@@ -21,10 +21,6 @@ final class MyTicketView: UIView {
     private let cashLabel = UILabel()
     private let cashStatusLabel = UILabel()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override init(frame: CGRect) {
@@ -123,8 +119,4 @@ extension MyTicketView {
             $0.trailing.equalToSuperview().inset(15)
         }
     }
-    
-    // MARK: - Methods
-    
-    // MARK: - @objc Methods
 }
