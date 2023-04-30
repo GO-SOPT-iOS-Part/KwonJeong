@@ -35,6 +35,7 @@
 		03983A9629FE750B00E5539D /* NSObject +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9529FE750B00E5539D /* NSObject +.swift */; };
 		03983A9829FE7F2700E5539D /* SectionLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9729FE7F2700E5539D /* SectionLineView.swift */; };
 		03983A9A29FE81C700E5539D /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9929FE81C700E5539D /* LogoutButtonView.swift */; };
+		03983A9C29FE97C600E5539D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9B29FE97C600E5539D /* HomeViewController.swift */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		03983A9529FE750B00E5539D /* NSObject +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject +.swift"; sourceTree = "<group>"; };
 		03983A9729FE7F2700E5539D /* SectionLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLineView.swift; sourceTree = "<group>"; };
 		03983A9929FE81C700E5539D /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
+		03983A9B29FE97C600E5539D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		036A1C1029FA594400B33403 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				03983A9B29FE97C600E5539D /* HomeViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */,
 				03983A9629FE750B00E5539D /* NSObject +.swift in Sources */,
 				03983A8C29FE698700E5539D /* MyPageTableViewCell.swift in Sources */,
+				03983A9C29FE97C600E5539D /* HomeViewController.swift in Sources */,
 				03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */,
 				03983A9229FE74D500E5539D /* UITableView +.swift in Sources */,
 				036A1C1B29FA769E00B33403 /* UIStackView +.swift in Sources */,

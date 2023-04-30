@@ -35,7 +35,7 @@ extension LogoutButtonView {
     
     private func setUI() {
         
-        backgroundColor = .clear
+        backgroundView?.backgroundColor = Color.tvingBlack
         
         logoutButton.do {
             $0.setTitle("로그아웃", for: .normal)

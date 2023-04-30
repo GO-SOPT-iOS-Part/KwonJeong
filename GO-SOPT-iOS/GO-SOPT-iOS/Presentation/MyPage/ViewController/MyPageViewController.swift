@@ -26,8 +26,7 @@ final class MyPageViewController: BaseViewController {
         setUI()
         setLayout()
         setNavigationBar()
-//        navigationController?.interactivePopGestureRecognizer?.delegate = self)
-        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 }
 
@@ -82,12 +81,30 @@ extension MyPageViewController {
     
     // MARK: - Methods
     
+    private func popToHome() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func setNavigationBar() {
-        
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = Color.tvingWhite
         navigationItem.leftBarButtonItem = UIBarButtonItem (
-            image: Image.backButtonIcon, style: .plain, target: self, action: nil )
+            image: Image.backButtonIcon,
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: navigationStackView)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func backButtonTapped() {
+        popToHome()
+    }
+}
+
+extension MyPageViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true 
     }
 }

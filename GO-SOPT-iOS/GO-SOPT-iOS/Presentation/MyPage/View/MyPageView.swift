@@ -22,10 +22,6 @@ final class MyPageView: UIScrollView {
     private let firstDummy = MyPageListModel.firstmyPageListdummyData()
     private let secondDummy = MyPageListModel.secondmyPageListdummyData()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override init(frame: CGRect) {

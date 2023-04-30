@@ -35,7 +35,7 @@ extension SectionLineView {
     
     private func setUI() {
         
-        backgroundColor = .clear
+        backgroundView?.backgroundColor = Color.tvingBlack
         
         sectionLineView.do {
             $0.backgroundColor = Color.tvingGray4
