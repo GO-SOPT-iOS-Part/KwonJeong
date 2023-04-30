@@ -28,6 +28,11 @@
 		03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */; };
 		03753BBB29E686C600B4F2A2 /* CreateNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BBA29E686C600B4F2A2 /* CreateNicknameViewController.swift */; };
 		03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BBC29E9A80C00B4F2A2 /* String +.swift */; };
+		03983A8C29FE698700E5539D /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A8B29FE698700E5539D /* MyPageTableViewCell.swift */; };
+		03983A9029FE6D7B00E5539D /* MyPageListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */; };
+		03983A9229FE74D500E5539D /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9129FE74D500E5539D /* UITableView +.swift */; };
+		03983A9429FE74F300E5539D /* UICollectionView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9329FE74F300E5539D /* UICollectionView +.swift */; };
+		03983A9629FE750B00E5539D /* NSObject +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9529FE750B00E5539D /* NSObject +.swift */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -66,6 +71,11 @@
 		03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		03753BBA29E686C600B4F2A2 /* CreateNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewController.swift; sourceTree = "<group>"; };
 		03753BBC29E9A80C00B4F2A2 /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
+		03983A8B29FE698700E5539D /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageListModel.swift; sourceTree = "<group>"; };
+		03983A9129FE74D500E5539D /* UITableView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView +.swift"; sourceTree = "<group>"; };
+		03983A9329FE74F300E5539D /* UICollectionView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView +.swift"; sourceTree = "<group>"; };
+		03983A9529FE750B00E5539D /* NSObject +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject +.swift"; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +119,7 @@
 			children = (
 				036A1C1C29FBDA9C00B33403 /* View */,
 				036A1C1629FA649400B33403 /* ViewController */,
+				03983A8A29FE695600E5539D /* Cell */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -180,6 +191,30 @@
 			path = CreateNickname;
 			sourceTree = "<group>";
 		};
+		03983A8A29FE695600E5539D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03983A8B29FE698700E5539D /* MyPageTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		03983A8D29FE6D5B00E5539D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				03983A8E29FE6D6B00E5539D /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		03983A8E29FE6D6B00E5539D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		03CD4E3A29DAFE76002BF3E0 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				03CD4E5A29DB01D5002BF3E0 /* Application */,
+				03983A8D29FE6D5B00E5539D /* Data */,
 				03CD4E5B29DB0309002BF3E0 /* Presentation */,
 				03CD4E5D29DB0386002BF3E0 /* Resource */,
 				03CD4E6729DB0685002BF3E0 /* Util */,
@@ -280,6 +316,9 @@
 				0371AEA429EEABD80036932B /* UIViewController +.swift */,
 				036A1C1A29FA769E00B33403 /* UIStackView +.swift */,
 				036A1C2C29FC342E00B33403 /* UILabel +.swift */,
+				03983A9129FE74D500E5539D /* UITableView +.swift */,
+				03983A9329FE74F300E5539D /* UICollectionView +.swift */,
+				03983A9529FE750B00E5539D /* NSObject +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -409,7 +448,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03983A9029FE6D7B00E5539D /* MyPageListModel.swift in Sources */,
 				036A1C1E29FBDABF00B33403 /* MyProfileView.swift in Sources */,
+				03983A9429FE74F300E5539D /* UICollectionView +.swift in Sources */,
 				03753BBB29E686C600B4F2A2 /* CreateNicknameViewController.swift in Sources */,
 				03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */,
 				03CD4E8E29E2950A002BF3E0 /* Image.swift in Sources */,
@@ -430,7 +471,10 @@
 				036A1C2729FBF90900B33403 /* MyTicketView.swift in Sources */,
 				03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */,
 				03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */,
+				03983A9629FE750B00E5539D /* NSObject +.swift in Sources */,
+				03983A8C29FE698700E5539D /* MyPageTableViewCell.swift in Sources */,
 				03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */,
+				03983A9229FE74D500E5539D /* UITableView +.swift in Sources */,
 				036A1C1B29FA769E00B33403 /* UIStackView +.swift in Sources */,
 				03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */,
 			);

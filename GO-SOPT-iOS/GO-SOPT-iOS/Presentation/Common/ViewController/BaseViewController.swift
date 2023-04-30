@@ -16,9 +16,9 @@ class BaseViewController: UIViewController {
     
     // MARK: - Properties
     
-    lazy private(set) var className: String = {
-      return type(of: self).description().components(separatedBy: ".").last ?? ""
-    }()
+//    lazy private(set) var className: String = {
+//      return type(of: self).description().components(separatedBy: ".").last ?? ""
+//    }()
     
     // MARK: - Initializer
     
@@ -31,9 +31,9 @@ class BaseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        print("DEINIT: \(className)")
-    }
+//    deinit {
+//        print("DEINIT: \(className)")
+//    }
     
     // MARK: - View Life Cycle
     
