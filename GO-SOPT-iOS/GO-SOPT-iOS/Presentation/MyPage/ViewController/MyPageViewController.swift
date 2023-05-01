@@ -83,6 +83,7 @@ extension MyPageViewController {
     
     private func popToHome() {
         navigationController?.popViewController(animated: true)
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setNavigationBar() {

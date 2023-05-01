@@ -22,6 +22,10 @@ final class HomeViewController: BaseViewController {
     
     // MARK: - View Life Cycle
     
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
