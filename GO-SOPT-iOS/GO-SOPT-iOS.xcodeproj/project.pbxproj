@@ -35,7 +35,15 @@
 		03983A9629FE750B00E5539D /* NSObject +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9529FE750B00E5539D /* NSObject +.swift */; };
 		03983A9829FE7F2700E5539D /* SectionLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9729FE7F2700E5539D /* SectionLineView.swift */; };
 		03983A9A29FE81C700E5539D /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9929FE81C700E5539D /* LogoutButtonView.swift */; };
-		03983A9C29FE97C600E5539D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9B29FE97C600E5539D /* HomeViewController.swift */; };
+		03983A9C29FE97C600E5539D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9B29FE97C600E5539D /* MainViewController.swift */; };
+		03983AA12A013FD600E5539D /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AA02A013FD600E5539D /* PageCollectionViewCell.swift */; };
+		03983AA32A01423C00E5539D /* PageNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AA22A01423C00E5539D /* PageNameModel.swift */; };
+		03983AA52A01594A00E5539D /* RealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AA42A01594A00E5539D /* RealTimeViewController.swift */; };
+		03983AA72A01595300E5539D /* TVProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AA62A01595300E5539D /* TVProgramViewController.swift */; };
+		03983AA92A01595C00E5539D /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AA82A01595C00E5539D /* MovieViewController.swift */; };
+		03983AAB2A01597300E5539D /* ParamountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AAA2A01597300E5539D /* ParamountViewController.swift */; };
+		03983AAD2A01597D00E5539D /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AAC2A01597D00E5539D /* KidsViewController.swift */; };
+		03983AAF2A015E9C00E5539D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983AAE2A015E9C00E5539D /* HomeViewController.swift */; };
 		03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */; };
 		03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */; };
 		03CD4E4E29DAFE76002BF3E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD4E4C29DAFE76002BF3E0 /* Main.storyboard */; };
@@ -81,7 +89,15 @@
 		03983A9529FE750B00E5539D /* NSObject +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject +.swift"; sourceTree = "<group>"; };
 		03983A9729FE7F2700E5539D /* SectionLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLineView.swift; sourceTree = "<group>"; };
 		03983A9929FE81C700E5539D /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
-		03983A9B29FE97C600E5539D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		03983A9B29FE97C600E5539D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		03983AA02A013FD600E5539D /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
+		03983AA22A01423C00E5539D /* PageNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNameModel.swift; sourceTree = "<group>"; };
+		03983AA42A01594A00E5539D /* RealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeViewController.swift; sourceTree = "<group>"; };
+		03983AA62A01595300E5539D /* TVProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramViewController.swift; sourceTree = "<group>"; };
+		03983AA82A01595C00E5539D /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		03983AAA2A01597300E5539D /* ParamountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamountViewController.swift; sourceTree = "<group>"; };
+		03983AAC2A01597D00E5539D /* KidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
+		03983AAE2A015E9C00E5539D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GO-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD4E4629DAFE76002BF3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CD4E4829DAFE76002BF3E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +132,10 @@
 		036A1C1029FA594400B33403 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				03983A9B29FE97C600E5539D /* HomeViewController.swift */,
+				03983A9B29FE97C600E5539D /* MainViewController.swift */,
+				03983A9D2A013C2700E5539D /* View */,
+				03983A9E2A013C2E00E5539D /* ViewController */,
+				03983A9F2A013C3800E5539D /* Cell */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -220,8 +239,37 @@
 			isa = PBXGroup;
 			children = (
 				03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */,
+				03983AA22A01423C00E5539D /* PageNameModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		03983A9D2A013C2700E5539D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03983A9E2A013C2E00E5539D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				03983AAE2A015E9C00E5539D /* HomeViewController.swift */,
+				03983AA42A01594A00E5539D /* RealTimeViewController.swift */,
+				03983AA62A01595300E5539D /* TVProgramViewController.swift */,
+				03983AA82A01595C00E5539D /* MovieViewController.swift */,
+				03983AAA2A01597300E5539D /* ParamountViewController.swift */,
+				03983AAC2A01597D00E5539D /* KidsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		03983A9F2A013C3800E5539D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				03983AA02A013FD600E5539D /* PageCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		03CD4E3A29DAFE76002BF3E0 = {
@@ -471,9 +519,11 @@
 				03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */,
 				03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */,
 				036A1C1529FA5B2000B33403 /* BaseViewController.swift in Sources */,
+				03983AA52A01594A00E5539D /* RealTimeViewController.swift in Sources */,
 				03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */,
 				036A1C2D29FC342E00B33403 /* UILabel +.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
+				03983AA12A013FD600E5539D /* PageCollectionViewCell.swift in Sources */,
 				03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */,
 				03753BA329E3F2FA00B4F2A2 /* UIButton +.swift in Sources */,
 				036A1C1829FA64D100B33403 /* MyPageViewController.swift in Sources */,
@@ -484,9 +534,15 @@
 				03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */,
 				03983A9629FE750B00E5539D /* NSObject +.swift in Sources */,
 				03983A8C29FE698700E5539D /* MyPageTableViewCell.swift in Sources */,
-				03983A9C29FE97C600E5539D /* HomeViewController.swift in Sources */,
+				03983A9C29FE97C600E5539D /* MainViewController.swift in Sources */,
+				03983AA32A01423C00E5539D /* PageNameModel.swift in Sources */,
 				03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */,
+				03983AAD2A01597D00E5539D /* KidsViewController.swift in Sources */,
+				03983AA92A01595C00E5539D /* MovieViewController.swift in Sources */,
 				03983A9229FE74D500E5539D /* UITableView +.swift in Sources */,
+				03983AAF2A015E9C00E5539D /* HomeViewController.swift in Sources */,
+				03983AAB2A01597300E5539D /* ParamountViewController.swift in Sources */,
+				03983AA72A01595300E5539D /* TVProgramViewController.swift in Sources */,
 				036A1C1B29FA769E00B33403 /* UIStackView +.swift in Sources */,
 				03CD4E6629DB04B3002BF3E0 /* FirstViewController.swift in Sources */,
 			);

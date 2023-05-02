@@ -29,7 +29,6 @@ final class MyPageView: UIScrollView {
         setUI()
         setLayout()
         setDelegate()
-        setNavigationBarColor()
     }
     
     required init?(coder: NSCoder) {
@@ -109,20 +108,6 @@ extension MyPageView {
     private func setDelegate() {
         myPageTableView.delegate = self
         myPageTableView.dataSource = self
-    }
-    
-    private func setNavigationBarColor() {
-        if #available(iOS 15, *) {
-            let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.configureWithOpaqueBackground()
-            navigationBarAppearance.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor : UIColor.white
-            ]
-            navigationBarAppearance.backgroundColor = .clear
-            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-        }
     }
 }
 
