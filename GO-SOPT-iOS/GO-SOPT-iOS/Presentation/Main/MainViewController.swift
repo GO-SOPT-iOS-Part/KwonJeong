@@ -14,12 +14,6 @@ final class MainViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    var currentPage: Int = 0 {
-        didSet {
-            bind(oldValue: oldValue, newValue: currentPage)
-        }
-    }
-    
     private let tvingLogo = UIImageView()
     private let myPageButton = UIButton()
     private let pageCollectionView: UICollectionView = {
@@ -33,17 +27,21 @@ final class MainViewController: BaseViewController {
         let vc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         return vc
     }()
-    private var dataViewControllers: [UIViewController] = []
+    private var dataVCs: [UIViewController] = []
     
     // MARK: - Properties
     
-    // MARK: - Initializer
+    var nowIndex: Int = 0 {
+        didSet {
+            bind(oldValue: oldValue, newValue: nowIndex)
+        }
+    }
     
     // MARK: - View Life Cycle
     
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
-        currentPage = 0
+        nowIndex = 0
     }
     
     override func viewDidLoad() {
@@ -77,7 +75,7 @@ extension MainViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.isScrollEnabled = true
             $0.showsHorizontalScrollIndicator = false
-            $0.backgroundColor = .systemGray
+            $0.backgroundColor = .clear
             $0.registerCell(PageCollectionViewCell.self)
         }
         
@@ -91,7 +89,6 @@ extension MainViewController {
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
         view.addSubviews(tvingLogo, myPageButton, pageCollectionView)
-//        view.addSubview(pageCollectionView)
         
         tvingLogo.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(14)
@@ -134,31 +131,40 @@ extension MainViewController {
     }
     
     private func setViewControllersInPageVC() {
-        if let firstVC = dataViewControllers.first {
+        if let firstVC = dataVCs.first {
             pageViewController.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
     }
     
     private func setPageViewController() {
-        
-        dataViewControllers += [HomeViewController()]
-        dataViewControllers += [RealTimeViewController()]
-        dataViewControllers += [TVProgramViewController()]
-        dataViewControllers += [MovieViewController()]
-        dataViewControllers += [ParamountViewController()]
-        dataViewControllers += [KidsViewController()]
+        dataVCs += [HomeViewController()]
+        dataVCs += [RealTimeViewController()]
+        dataVCs += [TVProgramViewController()]
+        dataVCs += [MovieViewController()]
+        dataVCs += [ParamountViewController()]
+        dataVCs += [KidsViewController()]
     }
     
     private func bind(oldValue: Int, newValue: Int) {
-        
         let direction: UIPageViewController.NavigationDirection = oldValue < newValue ? .forward : .reverse
-        pageViewController.setViewControllers([dataViewControllers[currentPage]], direction: direction, animated: true, completion: nil)
-        
-        pageCollectionView.selectItem(at: IndexPath(item: currentPage, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        pageViewController.setViewControllers([dataVCs[nowIndex]], direction: direction, animated: true, completion: nil)
+        pageCollectionView.selectItem(at: IndexPath(item: nowIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
-    func didTapCell(at indexPath: IndexPath) {
-        currentPage = indexPath.item
+    private func didTapCell(at indexPath: IndexPath) {
+        nowIndex = indexPath.item
+    }
+    
+    func labelWidthSize(index: Int) -> Int {
+        let size = pageNameModel[index].list.size(
+            withAttributes: [NSAttributedString.Key.font : UIFont.pretendard(.regular, size: 17)]).width
+        return Int(size)
+    }
+    
+    private func cellUnderLineSetting(cell: PageCollectionViewCell?, indexPath: IndexPath, selected: Bool) {
+        cell?.isSelected = selected
+        let size = labelWidthSize(index: indexPath.row)
+        cell?.setUnderLineSize(size: size)
     }
     
     private func pushToMyPage() {
@@ -171,6 +177,8 @@ extension MainViewController {
         pushToMyPage()
     }
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension MainViewController: UICollectionViewDataSource {
     
@@ -185,32 +193,36 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let nextVC = dataViewControllers[indexPath.row]
-        let currentIndex = dataViewControllers.firstIndex(of: nextVC)!
-        pageViewController.setViewControllers([nextVC], direction: currentIndex > currentPage ? .forward : .reverse, animated: true, completion: nil)
-        print(currentIndex)
+        let currentVC = dataVCs[indexPath.row]
+        let currentIndex = dataVCs.firstIndex(of: currentVC)!
+        bind(oldValue: currentIndex, newValue: nowIndex)
+        didTapCell(at: indexPath)
         
         let cell = collectionView.cellForItem(at: indexPath) as? PageCollectionViewCell
-        cell?.isSelected = true
+        cellUnderLineSetting(cell: cell, indexPath: indexPath, selected: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? PageCollectionViewCell
-        cell?.isSelected = false
+        cellUnderLineSetting(cell: cell, indexPath: indexPath, selected: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let myCell = cell as? PageCollectionViewCell
-        myCell?.underlineView.isHidden = !myCell!.isSelected
+        if let myCell = cell as? PageCollectionViewCell {
+            myCell.underlineView.isHidden = !myCell.isSelected
+            myCell.setUnderLineSize(size: labelWidthSize(index: indexPath.row))
+        }
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: pageNameModel[indexPath.row].list.size(
-            withAttributes: [NSAttributedString.Key.font : UIFont.pretendard(.regular, size: 17)]).width + 30,
-                      height: 41)
+        let width = labelWidthSize(index: indexPath.row)
+        let height = 41
+        return CGSize(width: width + 30, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -218,32 +230,36 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UIPageViewControllerDelegate
+
 extension MainViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard let currentVC = pageViewController.viewControllers?.first,
-              let currentIndex = dataViewControllers.firstIndex(of: currentVC) else { return }
-        currentPage = currentIndex
+              let currentIndex = dataVCs.firstIndex(of: currentVC) else { return }
+        nowIndex = currentIndex
         print(currentIndex)
     }
 }
 
+// MARK: - UIPAgeViewControllerDataSource
+
 extension MainViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = dataViewControllers.firstIndex(of: viewController) else { return nil }
+        guard let index = dataVCs.firstIndex(of: viewController) else { return nil }
         let previousIndex = index - 1
         if previousIndex < 0 {
             return nil
         }
-        return dataViewControllers[previousIndex]
+        return dataVCs[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let index = dataViewControllers.firstIndex(of: viewController) else { return nil }
+        guard let index = dataVCs.firstIndex(of: viewController) else { return nil }
         let nextIndex = index + 1
-        if nextIndex == dataViewControllers.count {
+        if nextIndex == dataVCs.count {
             return nil
         }
-        return dataViewControllers[nextIndex]
+        return dataVCs[nextIndex]
     }
 }

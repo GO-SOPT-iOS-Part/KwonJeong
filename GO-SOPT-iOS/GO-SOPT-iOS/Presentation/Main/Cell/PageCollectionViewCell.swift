@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+
+
 final class PageCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
@@ -39,10 +41,6 @@ extension PageCollectionViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
-        contentView.do {
-            $0.backgroundColor = .blue
-        }
-        
         pageLabel.do {
             $0.textColor = Color.tvingWhite
             $0.font = UIFont.pretendard(.regular, size: 17)
@@ -66,7 +64,8 @@ extension PageCollectionViewCell {
         
         underlineView.snp.makeConstraints {
             $0.bottom.equalToSuperview()
-            $0.width.equalToSuperview()
+            $0.centerX.equalToSuperview()
+//            $0.width.equalToSuperview()
             $0.height.equalTo(3)
         }
     }
@@ -75,6 +74,12 @@ extension PageCollectionViewCell {
     
     func setDataBind(model: PageNameModel) {
         pageLabel.text = model.list
+    }
+    
+    func setUnderLineSize(size: Int) {
+        underlineView.snp.makeConstraints {
+            $0.width.equalTo(size)
+        }
     }
     
     override var isSelected: Bool {
