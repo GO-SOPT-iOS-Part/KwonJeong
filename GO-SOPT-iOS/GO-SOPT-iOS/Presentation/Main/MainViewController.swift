@@ -78,7 +78,6 @@ extension MainViewController {
             $0.backgroundColor = .clear
             $0.registerCell(PageCollectionViewCell.self)
         }
-        
     }
     
     // MARK: - Layout Helper
@@ -163,8 +162,12 @@ extension MainViewController {
     
     private func cellUnderLineSetting(cell: PageCollectionViewCell?, indexPath: IndexPath, selected: Bool) {
         cell?.isSelected = selected
-        let size = labelWidthSize(index: indexPath.row)
-        cell?.setUnderLineSize(size: size)
+        cell?.setUnderLineWidth(size: labelWidthSize(index: indexPath.row))
+        if selected {
+            cell?.pageLabel.font = UIFont.pretendard(.bold, size: 18)
+        } else {
+            cell?.pageLabel.font = UIFont.pretendard(.regular, size: 17)
+        }
     }
     
     private func pushToMyPage() {
@@ -210,7 +213,7 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let myCell = cell as? PageCollectionViewCell {
             myCell.underlineView.isHidden = !myCell.isSelected
-            myCell.setUnderLineSize(size: labelWidthSize(index: indexPath.row))
+            myCell.setUnderLineWidth(size: labelWidthSize(index: indexPath.row))
         }
     }
 }

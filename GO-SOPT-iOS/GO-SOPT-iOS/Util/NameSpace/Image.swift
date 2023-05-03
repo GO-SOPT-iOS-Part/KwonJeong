@@ -26,6 +26,9 @@ public enum Image {
     public static let movieImg3 = UIImage(named: "movieImage3")!
     public static let movieImg4 = UIImage(named: "movieImage4")!
     public static let movieImg5 = UIImage(named: "movieImage5")!
+    public static let movieImg6 = UIImage(named: "movieImage6")!
+    public static let movieImg7 = UIImage(named: "movieImage7")!
+    public static let movieImg8 = UIImage(named: "movieImage8")!
     public static let profileButton = UIImage(named: "profileButton")!
     public static let tvingLogo = UIImage(named: "tvingLogo")!
     
