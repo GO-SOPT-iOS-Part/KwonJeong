@@ -7,24 +7,48 @@
 
 import UIKit
 
-class ParamountViewController: UIViewController {
+import SnapKit
+import Then
 
+final class ParamountViewController: UIViewController {
+    
+    // MARK: - UI Components
+    
+    private let scrollView = HomeScrollView()
+    
+    // MARK: - Properties
+
+    // MARK: - Initializer
+    
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        setUI()
+        setLayout()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension ParamountViewController {
+    
+    // MARK: - UI Components Property
+    
+    private func setUI() {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Layout Helper
+    
+    private func setLayout() {
+        
+        view.addSubviews(scrollView)
+        
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
-    */
-
+    
+    // MARK: - Methods
+    
+    // MARK: - @objc Methods
 }
