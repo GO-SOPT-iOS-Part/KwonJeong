@@ -84,6 +84,11 @@ extension PageCollectionViewCell {
     override var isSelected: Bool {
         didSet {
             underlineView.isHidden = !isSelected
+            if isSelected {
+                pageLabel.font = UIFont.pretendard(.bold, size: 18)
+            } else {
+                pageLabel.font = UIFont.pretendard(.regular, size: 17)
+            }
         }
     }
 }

@@ -163,11 +163,6 @@ extension MainViewController {
     private func cellUnderLineSetting(cell: PageCollectionViewCell?, indexPath: IndexPath, selected: Bool) {
         cell?.isSelected = selected
         cell?.setUnderLineWidth(size: labelWidthSize(index: indexPath.row))
-        if selected {
-            cell?.pageLabel.font = UIFont.pretendard(.bold, size: 18)
-        } else {
-            cell?.pageLabel.font = UIFont.pretendard(.regular, size: 17)
-        }
     }
     
     private func pushToMyPage() {
