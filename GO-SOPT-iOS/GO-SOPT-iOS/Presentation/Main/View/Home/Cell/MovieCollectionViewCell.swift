@@ -48,9 +48,7 @@ extension MovieCollectionViewCell {
         contentView.addSubviews(movieImage)
         
         movieImage.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.trailing.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
     }
     
