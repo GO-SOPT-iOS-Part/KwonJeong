@@ -20,4 +20,10 @@ extension String {
            guard self.range(of: pattern, options: .regularExpression) != nil else { return false }
            return true
     }
+    
+    func size(OfFont font: UIFont) -> CGSize {
+        let size = (self as NSString).size(withAttributes: [.font: font])
+        let buffer = 0.2 
+        return CGSize(width: size.width + buffer, height: size.height)
+    }
 }

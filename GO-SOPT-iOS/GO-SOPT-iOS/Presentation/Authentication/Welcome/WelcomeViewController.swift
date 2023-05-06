@@ -40,7 +40,7 @@ extension WelcomeViewController {
         view.backgroundColor = Color.tvingBlack
         
         tvingImageView.do {
-            $0.image = Image.tvingLogo
+            $0.image = Image.welcomeImage
         }
         
         userNameLabel.do {

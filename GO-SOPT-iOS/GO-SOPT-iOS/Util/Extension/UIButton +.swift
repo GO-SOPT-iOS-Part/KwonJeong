@@ -29,4 +29,14 @@ extension UIButton {
             self.transform = .identity
         }
     }
+    
+    func setImage(systemName: String) {
+        // 가로, 세로 정렬
+        contentHorizontalAlignment = .fill
+        contentVerticalAlignment = .fill
+        // 이미지를 꽉차게 만듬
+        imageView?.contentMode = .scaleAspectFit
+        // 기존 setImage 메소드
+        setImage(UIImage(systemName: systemName), for: .normal)
+    }
 }
