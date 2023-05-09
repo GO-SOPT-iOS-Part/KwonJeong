@@ -15,10 +15,7 @@ final class HomeViewController: BaseViewController {
     private typealias SectionType = Section
     
     private enum Section: CaseIterable {
-        case poster
-        case content
-        case live
-        case advertising
+        case poster, content, live, paramount, advertising
     }
     
     // MARK: - UI Components
@@ -51,8 +48,7 @@ extension HomeViewController {
         view.backgroundColor = .clear
         
         homeCollectionView.do {
-            $0.showsVerticalScrollIndicator = true
-            $0.showsHorizontalScrollIndicator = false
+            $0.showsVerticalScrollIndicator = false
             $0.isScrollEnabled = true
             $0.backgroundColor = .clear
             $0.clipsToBounds = true
@@ -86,37 +82,18 @@ extension HomeViewController {
     
     private func setSectionLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { section, env -> NSCollectionLayoutSection? in
-//            let sectionType = Section.allCases[section]
-            switch section {
-            case 0:
+            let sectionType = SectionType.allCases[section]
+            switch sectionType {
+            case .poster:
                 return self.getLayoutPosterSection()
-            case 1, 3:
+            case .content:
                 return self.getLayoutContentSection()
-            case 2:
+            case .live:
                 return self.getLayoutLiveSection()
-            case 4:
+            case .paramount:
+                return self.getLayoutContentSection()
+            case .advertising:
                 return self.getLayoutAdvertisingSection()
-            default:
-                let itemFractionalWidthFraction = 1.0 / 5.0
-                let groupFractionalHeightFraction = 1.0 / 4.0
-                let itemInset: CGFloat = 0
-                
-                let itemSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(itemFractionalWidthFraction),
-                    heightDimension: .fractionalHeight(1)
-                )
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: itemInset, bottom: itemInset, trailing: itemInset)
-                
-                let groupSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalHeight(groupFractionalHeightFraction)
-                )
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-                
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: itemInset, bottom: itemInset, trailing: itemInset)
-                return section
             }
         }
     }
@@ -151,7 +128,7 @@ extension HomeViewController {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.6),
@@ -175,7 +152,7 @@ extension HomeViewController {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 7, bottom: 0, trailing: 7)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 7, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.9),
@@ -218,40 +195,44 @@ extension HomeViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
+        let sectionType = SectionType.allCases[section]
+        switch sectionType {
+        case .poster:
             return movieModel.count
-        case 1, 3:
+        case .content:
             return tvingContentModel.count
-        case 2:
+        case .live:
             return movieModel.count
-        case 4:
+        case .paramount:
+            return tvingContentModel.count
+        case .advertising:
             return 1
-        default:
-            return 0
+
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
+        let sectionType = SectionType.allCases[indexPath.section]
+        switch sectionType {
+        case .poster:
             let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: movieModel[indexPath.row])
             return cell
-        case 1, 3:
+        case .content:
             let cell = collectionView.dequeueCell(type: TvingContentCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: tvingContentModel[indexPath.row])
             return cell
-        case 2:
+        case .live:
             let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: movieModel[indexPath.row])
             return cell
-        case 4:
+        case .paramount:
+            let cell = collectionView.dequeueCell(type: TvingContentCollectionViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: tvingContentModel[indexPath.row])
+            return cell
+        case .advertising:
             let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: movieModel[indexPath.row])
-            return cell
-        default:
-            let cell = UICollectionViewCell()
             return cell
         }
     }
@@ -260,6 +241,6 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return Section.allCases.count
     }
 }
