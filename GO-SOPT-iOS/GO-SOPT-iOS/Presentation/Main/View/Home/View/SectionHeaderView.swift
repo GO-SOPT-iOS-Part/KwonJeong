@@ -10,7 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class SectionHeaderView: UITableViewHeaderFooterView {
+final class SectionHeaderView: UICollectionReusableView {
+    
+    static let identifier = "SectionHeaderView"
     
     // MARK: - UI Components
     
@@ -22,8 +24,8 @@ final class SectionHeaderView: UITableViewHeaderFooterView {
     
     // MARK: - View Life Cycle
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
         setLayout()
     }
@@ -44,6 +46,7 @@ extension SectionHeaderView {
         headerLabel.do {
             $0.font = UIFont.pretendard(.semibold, size: 15)
             $0.textColor = Color.tvingWhite
+            $0.text = "anjdi"
         }
     }
     
@@ -56,7 +59,6 @@ extension SectionHeaderView {
         headerLabel.snp.makeConstraints {
             $0.height.equalTo(23)
         }
-        
     }
     
     // MARK: - Methods
