@@ -31,6 +31,8 @@ public enum Image {
     public static let movieImg8 = UIImage(named: "movieImage8")!
     public static let profileButton = UIImage(named: "profileButton")!
     public static let tvingLogo = UIImage(named: "tvingLogo")!
+    public static let live1 = UIImage(named: "live1")!
+    public static let live2 = UIImage(named: "live2")!
     
     // MARK: - MyPage
     

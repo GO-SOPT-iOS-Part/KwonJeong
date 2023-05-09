@@ -12,9 +12,18 @@ import Then
 
 final class HomeViewController: BaseViewController {
     
+    private typealias SectionType = Section
+    
+    private enum Section: CaseIterable {
+        case poster
+        case content
+        case live
+        case advertising
+    }
+    
     // MARK: - UI Components
     
-    private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setCompositionLayout())
+    private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
     var movieModel: [MovieModel] = MovieModel.moviedummyData()
     private var tvingContentModel: [TvingContentModel] = TvingContentModel.tvingContentdummyData()
 
@@ -48,6 +57,7 @@ extension HomeViewController {
             $0.backgroundColor = .clear
             $0.clipsToBounds = true
             $0.contentInsetAdjustmentBehavior = .never
+            $0.collectionViewLayout = self.setSectionLayout()
         }
     }
     
@@ -74,30 +84,23 @@ extension HomeViewController {
         homeCollectionView.register(GalleryCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "GalleryCollectionReusableView")
     }
     
-    private func setCompositionLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection? in
+    private func setSectionLayout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout { section, env -> NSCollectionLayoutSection? in
+//            let sectionType = Section.allCases[section]
             switch section {
             case 0:
-                let itemFractionalWidthFraction: CGFloat = 1.0 / 1.0
-                let groupFractionalHeightFraction: CGFloat = 1.0 / 1.4
-                let itemInset: CGFloat = 0
-                
-                let section = self.getNSCollectionLayoutSection(fractionalWidth: itemFractionalWidthFraction, fractionalHeight: groupFractionalHeightFraction, itemInset: itemInset, leadingInset: 0, bottomInset: 20, absoluteHeaderHeightOf: 1, orthogonalBehavior: .paging)
-                return section
-                
-            case 1, 2, 3:
-                let itemFractionalWidthFraction: CGFloat = 1.0 / 3.2
-                let groupFractionalHeightFraction: CGFloat = 1.0 / 4.8
-                let itemInset: CGFloat = 7
-                
-                let section = self.getNSCollectionLayoutSection(fractionalWidth: itemFractionalWidthFraction, fractionalHeight: groupFractionalHeightFraction, itemInset: itemInset, bottomInset: 13, absoluteHeaderHeightOf: 20)
-                return section
-                
+                return self.getLayoutPosterSection()
+            case 1, 3:
+                return self.getLayoutContentSection()
+            case 2:
+                return self.getLayoutLiveSection()
+            case 4:
+                return self.getLayoutAdvertisingSection()
             default:
                 let itemFractionalWidthFraction = 1.0 / 5.0
                 let groupFractionalHeightFraction = 1.0 / 4.0
                 let itemInset: CGFloat = 0
-
+                
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(itemFractionalWidthFraction),
                     heightDimension: .fractionalHeight(1)
@@ -118,24 +121,95 @@ extension HomeViewController {
         }
     }
     
-    private func getNSCollectionLayoutSection(fractionalWidth: CGFloat, fractionalHeight: CGFloat, itemInset: CGFloat, leadingInset: CGFloat = 15, topInset: CGFloat = 4, bottomInset: CGFloat = 0, absoluteHeaderHeightOf absoluteSize: CGFloat, orthogonalBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior = .continuous) -> NSCollectionLayoutSection {
-            
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+    private func getLayoutPosterSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: 0, bottom: itemInset, trailing: itemInset)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fractionalWidth), heightDimension: .fractionalHeight(fractionalHeight))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(600)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: topInset, leading: leadingInset, bottom: bottomInset, trailing: 0)
+        section.orthogonalScrollingBehavior = .paging
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 0, leading: 0, bottom: 0, trailing: 0)
+        return section
+    }
+    
+    private func getLayoutContentSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
         
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(absoluteSize))
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.6),
+            heightDimension: .absolute(170)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         
-        section.boundarySupplementaryItems = [header]
-        section.orthogonalScrollingBehavior = orthogonalBehavior
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 10, bottom: 0, trailing: 10)
         
+        return section
+    }
+    
+    private func getLayoutLiveSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 7, bottom: 0, trailing: 7)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.9),
+            heightDimension: .absolute(80)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 10, bottom: 0, trailing: 10)
+        return section
+    }
+    
+    private func getLayoutAdvertisingSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(56)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 103, trailing: 0)
         return section
     }
     
@@ -147,8 +221,12 @@ extension HomeViewController: UICollectionViewDataSource {
         switch section {
         case 0:
             return movieModel.count
-        case 1, 2, 3:
+        case 1, 3:
             return tvingContentModel.count
+        case 2:
+            return movieModel.count
+        case 4:
+            return 1
         default:
             return 0
         }
@@ -160,9 +238,17 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: movieModel[indexPath.row])
             return cell
-        case 1, 2, 3:
+        case 1, 3:
             let cell = collectionView.dequeueCell(type: TvingContentCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: tvingContentModel[indexPath.row])
+            return cell
+        case 2:
+            let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: movieModel[indexPath.row])
+            return cell
+        case 4:
+            let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: movieModel[indexPath.row])
             return cell
         default:
             let cell = UICollectionViewCell()
