@@ -23,6 +23,7 @@ final class HomeViewController: BaseViewController {
     private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
     var movieModel: [MovieModel] = MovieModel.moviedummyData()
     private var contentModel: [ContentModel] = ContentModel.contentdummyData()
+    private var networkContentModel: [NetworkContentModel] = []
 
     // MARK: - Properties
 
@@ -36,6 +37,7 @@ final class HomeViewController: BaseViewController {
         setLayout()
         setDelegate()
         setRegister()
+        fetchContent()
     }
 }
 
@@ -285,5 +287,30 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Section.allCases.count
+    }
+}
+
+extension HomeViewController {
+    
+    private func fetchContent() {
+        ContentService.shared.content { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? ContentResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                self.networkContentModel = data.convertToContent()
+                print(self.networkContentModel)
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("-----------경로이상-------------")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
+            }
+        }
     }
 }

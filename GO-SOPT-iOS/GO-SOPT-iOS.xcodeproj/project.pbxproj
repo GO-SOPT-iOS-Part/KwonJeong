@@ -17,6 +17,11 @@
 		036A1C2D29FC342E00B33403 /* UILabel +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A1C2C29FC342E00B33403 /* UILabel +.swift */; };
 		036ED6022A0ABA9F006A7F47 /* LiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED6012A0ABA9F006A7F47 /* LiveModel.swift */; };
 		036ED6042A0AC347006A7F47 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED6032A0AC347006A7F47 /* SectionHeaderView.swift */; };
+		036ED6172A0D412A006A7F47 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 036ED6162A0D412A006A7F47 /* Alamofire */; };
+		036ED61B2A0D4AB6006A7F47 /* ContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED61A2A0D4AB6006A7F47 /* ContentResponse.swift */; };
+		036ED61E2A0D4B3C006A7F47 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED61D2A0D4B3C006A7F47 /* NetworkResult.swift */; };
+		036ED6222A0D4CB0006A7F47 /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED6212A0D4CB0006A7F47 /* ContentService.swift */; };
+		036ED6252A0D52CE006A7F47 /* NetworkContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED6242A0D52CE006A7F47 /* NetworkContentModel.swift */; };
 		0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371AEA429EEABD80036932B /* UIViewController +.swift */; };
 		03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */; };
 		03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA029E3F2E100B4F2A2 /* UITextField +.swift */; };
@@ -79,6 +84,10 @@
 		036A1C2C29FC342E00B33403 /* UILabel +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel +.swift"; sourceTree = "<group>"; };
 		036ED6012A0ABA9F006A7F47 /* LiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveModel.swift; sourceTree = "<group>"; };
 		036ED6032A0AC347006A7F47 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		036ED61A2A0D4AB6006A7F47 /* ContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentResponse.swift; sourceTree = "<group>"; };
+		036ED61D2A0D4B3C006A7F47 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		036ED6212A0D4CB0006A7F47 /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
+		036ED6242A0D52CE006A7F47 /* NetworkContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContentModel.swift; sourceTree = "<group>"; };
 		0371AEA429EEABD80036932B /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		03753BA029E3F2E100B4F2A2 /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
@@ -135,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CD4E6129DB047A002BF3E0 /* SnapKit in Frameworks */,
+				036ED6172A0D412A006A7F47 /* Alamofire in Frameworks */,
 				03CD4E6429DB0485002BF3E0 /* Then in Frameworks */,
 				03753BB529E4051B00B4F2A2 /* Inject in Frameworks */,
 			);
@@ -203,6 +213,8 @@
 		036ED6052A0D2CD2006A7F47 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				036ED61F2A0D4B72006A7F47 /* APIService */,
+				036ED6192A0D42A0006A7F47 /* Foundation */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -326,6 +338,46 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		036ED6192A0D42A0006A7F47 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				036ED61D2A0D4B3C006A7F47 /* NetworkResult.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		036ED61C2A0D4ADE006A7F47 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				036ED6232A0D4CB8006A7F47 /* Content */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		036ED61F2A0D4B72006A7F47 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				036ED6202A0D4CA1006A7F47 /* Content */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		036ED6202A0D4CA1006A7F47 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				036ED6212A0D4CB0006A7F47 /* ContentService.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		036ED6232A0D4CB8006A7F47 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				036ED61A2A0D4AB6006A7F47 /* ContentResponse.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		03753B9F29E3EDD700B4F2A2 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				03983A8E29FE6D6B00E5539D /* Model */,
+				036ED61C2A0D4ADE006A7F47 /* DTO */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -382,6 +435,7 @@
 				03DB1BF62A0282BC00DBAE68 /* MovieModel.swift */,
 				03DB1C332A04EE7F00DBAE68 /* ContentModel.swift */,
 				036ED6012A0ABA9F006A7F47 /* LiveModel.swift */,
+				036ED6242A0D52CE006A7F47 /* NetworkContentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,9 +467,9 @@
 		03CD4E4529DAFE76002BF3E0 /* GO-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				036ED6052A0D2CD2006A7F47 /* Network */,
 				03CD4E5A29DB01D5002BF3E0 /* Application */,
 				03983A8D29FE6D5B00E5539D /* Data */,
+				036ED6052A0D2CD2006A7F47 /* Network */,
 				03CD4E5B29DB0309002BF3E0 /* Presentation */,
 				03CD4E5D29DB0386002BF3E0 /* Resource */,
 				03CD4E6729DB0685002BF3E0 /* Util */,
@@ -579,6 +633,7 @@
 				03CD4E6029DB047A002BF3E0 /* SnapKit */,
 				03CD4E6329DB0485002BF3E0 /* Then */,
 				03753BB429E4051B00B4F2A2 /* Inject */,
+				036ED6162A0D412A006A7F47 /* Alamofire */,
 			);
 			productName = "GO-SOPT-iOS";
 			productReference = 03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */;
@@ -612,6 +667,7 @@
 				03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				03CD4E6229DB0485002BF3E0 /* XCRemoteSwiftPackageReference "Then" */,
 				03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */,
+				036ED6152A0D412A006A7F47 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 03CD4E4429DAFE76002BF3E0 /* Products */;
 			projectDirPath = "";
@@ -661,8 +717,10 @@
 				03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */,
 				03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */,
 				036A1C1529FA5B2000B33403 /* BaseViewController.swift in Sources */,
+				036ED61E2A0D4B3C006A7F47 /* NetworkResult.swift in Sources */,
 				03983AA52A01594A00E5539D /* RealTimeViewController.swift in Sources */,
 				03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */,
+				036ED6252A0D52CE006A7F47 /* NetworkContentModel.swift in Sources */,
 				036A1C2D29FC342E00B33403 /* UILabel +.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
 				03983AA12A013FD600E5539D /* PageCollectionViewCell.swift in Sources */,
@@ -684,10 +742,12 @@
 				03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */,
 				03983AAD2A01597D00E5539D /* KidsViewController.swift in Sources */,
 				03983AA92A01595C00E5539D /* MovieViewController.swift in Sources */,
+				036ED6222A0D4CB0006A7F47 /* ContentService.swift in Sources */,
 				03DB1C342A04EE7F00DBAE68 /* ContentModel.swift in Sources */,
 				03983A9229FE74D500E5539D /* UITableView +.swift in Sources */,
 				03983AAF2A015E9C00E5539D /* HomeViewController.swift in Sources */,
 				03983AAB2A01597300E5539D /* ParamountViewController.swift in Sources */,
+				036ED61B2A0D4AB6006A7F47 /* ContentResponse.swift in Sources */,
 				036ED6042A0AC347006A7F47 /* SectionHeaderView.swift in Sources */,
 				03983AA72A01595300E5539D /* TVProgramViewController.swift in Sources */,
 				036ED6022A0ABA9F006A7F47 /* LiveModel.swift in Sources */,
@@ -928,6 +988,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		036ED6152A0D412A006A7F47 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
@@ -955,6 +1023,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		036ED6162A0D412A006A7F47 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 036ED6152A0D412A006A7F47 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		03753BB429E4051B00B4F2A2 /* Inject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */;
