@@ -22,8 +22,7 @@ final class HomeViewController: BaseViewController {
     
     private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
     var movieModel: [MovieModel] = MovieModel.moviedummyData()
-    private var contentModel: [ContentModel] = ContentModel.contentdummyData()
-    private var networkContentModel: [NetworkContentModel] = []
+    private var contentModel: [ContentModel] = []
 
     // MARK: - Properties
 
@@ -221,11 +220,11 @@ extension HomeViewController: UICollectionViewDataSource {
         case .poster:
             return movieModel.count
         case .content:
-            return networkContentModel.count
+            return contentModel.count
         case .live:
             return movieModel.count
         case .paramount:
-            return networkContentModel.count
+            return contentModel.count
         case .advertising:
             return 1
 
@@ -241,7 +240,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .content:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: networkContentModel[indexPath.row])
+            cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .live:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
@@ -249,7 +248,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .paramount:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: networkContentModel[indexPath.row])
+            cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .advertising:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
@@ -300,8 +299,7 @@ extension HomeViewController {
                 print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
                 dump(data)
                 print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
-                self.networkContentModel = data.convertToContent()
-                print(self.networkContentModel)
+                self.contentModel = data.convertToContent()
                 self.homeCollectionView.reloadData()
             case .serverErr:
                 print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")

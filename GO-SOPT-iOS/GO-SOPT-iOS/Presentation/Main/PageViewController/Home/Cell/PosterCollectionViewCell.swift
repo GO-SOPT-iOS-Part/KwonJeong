@@ -40,6 +40,8 @@ extension PosterCollectionViewCell {
         
         movieImage.do {
             $0.contentMode = .scaleToFill
+            $0.layer.cornerRadius = 3
+            $0.clipsToBounds = true
         }
     }
     

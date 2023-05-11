@@ -21,7 +21,6 @@
 		036ED61B2A0D4AB6006A7F47 /* ContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED61A2A0D4AB6006A7F47 /* ContentResponse.swift */; };
 		036ED61E2A0D4B3C006A7F47 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED61D2A0D4B3C006A7F47 /* NetworkResult.swift */; };
 		036ED6222A0D4CB0006A7F47 /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED6212A0D4CB0006A7F47 /* ContentService.swift */; };
-		036ED6252A0D52CE006A7F47 /* NetworkContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036ED6242A0D52CE006A7F47 /* NetworkContentModel.swift */; };
 		0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371AEA429EEABD80036932B /* UIViewController +.swift */; };
 		03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */; };
 		03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BA029E3F2E100B4F2A2 /* UITextField +.swift */; };
@@ -89,7 +88,6 @@
 		036ED61A2A0D4AB6006A7F47 /* ContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentResponse.swift; sourceTree = "<group>"; };
 		036ED61D2A0D4B3C006A7F47 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		036ED6212A0D4CB0006A7F47 /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
-		036ED6242A0D52CE006A7F47 /* NetworkContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContentModel.swift; sourceTree = "<group>"; };
 		0371AEA429EEABD80036932B /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		03753B9D29E3EC9500B4F2A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		03753BA029E3F2E100B4F2A2 /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
@@ -439,7 +437,6 @@
 				03DB1BF62A0282BC00DBAE68 /* MovieModel.swift */,
 				03DB1C332A04EE7F00DBAE68 /* ContentModel.swift */,
 				036ED6012A0ABA9F006A7F47 /* LiveModel.swift */,
-				036ED6242A0D52CE006A7F47 /* NetworkContentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -727,7 +724,6 @@
 				036ED61E2A0D4B3C006A7F47 /* NetworkResult.swift in Sources */,
 				03983AA52A01594A00E5539D /* RealTimeViewController.swift in Sources */,
 				03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */,
-				036ED6252A0D52CE006A7F47 /* NetworkContentModel.swift in Sources */,
 				036A1C2D29FC342E00B33403 /* UILabel +.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
 				03983AA12A013FD600E5539D /* PageCollectionViewCell.swift in Sources */,

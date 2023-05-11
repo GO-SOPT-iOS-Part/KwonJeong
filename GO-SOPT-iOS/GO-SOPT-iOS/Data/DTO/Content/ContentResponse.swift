@@ -24,8 +24,8 @@ struct ContentResponse: Codable {
         case totalResults = "total_results"
     }
     
-    func convertToContent() -> [NetworkContentModel] {
-        return results.map { NetworkContentModel(image: "https://image.tmdb.org/t/p/original/" + $0.posterPath, title: $0.title) }
+    func convertToContent() -> [ContentModel] {
+        return results.map { ContentModel(image: "https://image.tmdb.org/t/p/original/" + $0.posterPath, title: $0.title) }
     }
 }
 

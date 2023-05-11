@@ -42,6 +42,8 @@ extension ContentCollectionViewCell {
         
         movieImage.do {
             $0.contentMode = .scaleToFill
+            $0.layer.cornerRadius = 3
+            $0.clipsToBounds = true
         }
         
         movieTitle.do {
@@ -65,15 +67,15 @@ extension ContentCollectionViewCell {
         movieTitle.snp.makeConstraints {
             $0.top.equalTo(movieImage.snp.bottom).offset(3)
             $0.leading.equalToSuperview()
+            $0.width.equalToSuperview().inset(3)
         }
     }
     
     // MARK: - Methods
     
-    func setDataBind(model: NetworkContentModel) {
+    func setDataBind(model: ContentModel) {
         guard let url = URL(string: model.image) else { return }
         movieImage.kf.setImage(with: url)
         movieTitle.text = model.title
-        print("데이터바인딩 바인딩")
     }
 }
