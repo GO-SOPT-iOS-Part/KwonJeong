@@ -13,6 +13,7 @@
 import Foundation
 
 // MARK: - Movie
+
 struct ContentResponse: Codable {
     let page: Int
     let results: [Result]
@@ -30,6 +31,7 @@ struct ContentResponse: Codable {
 }
 
 // MARK: - Result
+
 struct Result: Codable {
     let adult: Bool
     let backdropPath: String
