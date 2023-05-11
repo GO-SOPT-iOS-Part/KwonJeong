@@ -35,6 +35,7 @@
 		03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BB729E5B28300B4F2A2 /* WelcomeViewController.swift */; };
 		03753BBB29E686C600B4F2A2 /* CreateNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BBA29E686C600B4F2A2 /* CreateNicknameViewController.swift */; };
 		03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03753BBC29E9A80C00B4F2A2 /* String +.swift */; };
+		037C35CE2A0D5B2300FAC78B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 037C35CD2A0D5B2300FAC78B /* Kingfisher */; };
 		03983A8C29FE698700E5539D /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A8B29FE698700E5539D /* MyPageTableViewCell.swift */; };
 		03983A9029FE6D7B00E5539D /* MyPageListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */; };
 		03983A9229FE74D500E5539D /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9129FE74D500E5539D /* UITableView +.swift */; };
@@ -147,6 +148,7 @@
 				036ED6172A0D412A006A7F47 /* Alamofire in Frameworks */,
 				03CD4E6429DB0485002BF3E0 /* Then in Frameworks */,
 				03753BB529E4051B00B4F2A2 /* Inject in Frameworks */,
+				037C35CE2A0D5B2300FAC78B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +636,7 @@
 				03CD4E6329DB0485002BF3E0 /* Then */,
 				03753BB429E4051B00B4F2A2 /* Inject */,
 				036ED6162A0D412A006A7F47 /* Alamofire */,
+				037C35CD2A0D5B2300FAC78B /* Kingfisher */,
 			);
 			productName = "GO-SOPT-iOS";
 			productReference = 03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */;
@@ -668,6 +671,7 @@
 				03CD4E6229DB0485002BF3E0 /* XCRemoteSwiftPackageReference "Then" */,
 				03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */,
 				036ED6152A0D412A006A7F47 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				037C35CC2A0D5B2300FAC78B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 03CD4E4429DAFE76002BF3E0 /* Products */;
 			projectDirPath = "";
@@ -1004,6 +1008,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		037C35CC2A0D5B2300FAC78B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1032,6 +1044,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */;
 			productName = Inject;
+		};
+		037C35CD2A0D5B2300FAC78B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 037C35CC2A0D5B2300FAC78B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		03CD4E6029DB047A002BF3E0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
