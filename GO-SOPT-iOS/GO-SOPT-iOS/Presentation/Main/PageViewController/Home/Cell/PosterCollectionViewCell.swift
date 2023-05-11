@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class MovieCollectionViewCell: UICollectionViewCell {
+final class PosterCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
@@ -29,7 +29,7 @@ final class MovieCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension MovieCollectionViewCell {
+extension PosterCollectionViewCell {
     
     // MARK: - UI Components Property
     

@@ -91,7 +91,7 @@ extension HomeScrollView {
     }
     
     private func setRegister() {
-        movieCollectionView.registerCell(MovieCollectionViewCell.self)
+        movieCollectionView.registerCell(CollectionViewCell.self)
     }
     
     // MARK: - @objc Methods

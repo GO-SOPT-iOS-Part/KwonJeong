@@ -1,5 +1,5 @@
 //
-//  ParamountViewController.swift
+//  RealTimeViewController.swift
 //  GO-SOPT-iOS
 //
 //  Created by KJ on 2023/05/02.
@@ -10,11 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class ParamountViewController: UIViewController {
+final class RealTimeViewController: UIViewController {
     
     // MARK: - UI Components
-    
-    private let scrollView = HomeScrollView()
     
     // MARK: - Properties
 
@@ -29,23 +27,20 @@ final class ParamountViewController: UIViewController {
     }
 }
 
-extension ParamountViewController {
+extension RealTimeViewController {
     
     // MARK: - UI Components Property
     
     private func setUI() {
+        
+        view.backgroundColor = Color.tvingGray1
         
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        
-        view.addSubviews(scrollView)
-        
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+    
     }
     
     // MARK: - Methods

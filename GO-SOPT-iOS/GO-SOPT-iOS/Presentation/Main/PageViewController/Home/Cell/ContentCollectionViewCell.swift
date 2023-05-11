@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class TvingContentCollectionViewCell: UICollectionViewCell {
+final class ContentCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components Property
     
@@ -30,7 +30,7 @@ final class TvingContentCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension TvingContentCollectionViewCell {
+extension ContentCollectionViewCell {
     
     // MARK: - UI Components Property
     
@@ -69,7 +69,7 @@ extension TvingContentCollectionViewCell {
     
     // MARK: - Methods
     
-    func setDataBind(model: TvingContentModel) {
+    func setDataBind(model: ContentModel) {
         movieImage.image = model.image
         movieTitle.text = model.title
     }

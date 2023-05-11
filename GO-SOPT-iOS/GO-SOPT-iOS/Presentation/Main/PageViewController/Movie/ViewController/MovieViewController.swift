@@ -1,5 +1,5 @@
 //
-//  TVProgramViewController.swift
+//  MovieViewController.swift
 //  GO-SOPT-iOS
 //
 //  Created by KJ on 2023/05/02.
@@ -10,11 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class TVProgramViewController: UIViewController {
+final class MovieViewController: UIViewController {
     
     // MARK: - UI Components
-    
-    private let scrollView = HomeScrollView()
     
     // MARK: - Properties
 
@@ -29,11 +27,13 @@ final class TVProgramViewController: UIViewController {
     }
 }
 
-extension TVProgramViewController {
+extension MovieViewController {
     
     // MARK: - UI Components Property
     
     private func setUI() {
+        
+        view.backgroundColor = Color.tvingGray3
         
     }
     
@@ -41,11 +41,6 @@ extension TVProgramViewController {
     
     private func setLayout() {
         
-        view.addSubviews(scrollView)
-        
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
     
     // MARK: - Methods
