@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import Kingfisher
 
 final class ContentCollectionViewCell: UICollectionViewCell {
     
@@ -69,8 +70,10 @@ extension ContentCollectionViewCell {
     
     // MARK: - Methods
     
-    func setDataBind(model: ContentModel) {
-        movieImage.image = model.image
+    func setDataBind(model: NetworkContentModel) {
+        guard let url = URL(string: model.image) else { return }
+        movieImage.kf.setImage(with: url)
         movieTitle.text = model.title
+        print("데이터바인딩 바인딩")
     }
 }

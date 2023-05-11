@@ -221,11 +221,11 @@ extension HomeViewController: UICollectionViewDataSource {
         case .poster:
             return movieModel.count
         case .content:
-            return contentModel.count
+            return networkContentModel.count
         case .live:
             return movieModel.count
         case .paramount:
-            return contentModel.count
+            return networkContentModel.count
         case .advertising:
             return 1
 
@@ -241,7 +241,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .content:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: contentModel[indexPath.row])
+            cell.setDataBind(model: networkContentModel[indexPath.row])
             return cell
         case .live:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
@@ -249,7 +249,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .paramount:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: contentModel[indexPath.row])
+            cell.setDataBind(model: networkContentModel[indexPath.row])
             return cell
         case .advertising:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
@@ -302,6 +302,7 @@ extension HomeViewController {
                 print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
                 self.networkContentModel = data.convertToContent()
                 print(self.networkContentModel)
+                self.homeCollectionView.reloadData()
             case .serverErr:
                 print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
             case .pathErr:
