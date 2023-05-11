@@ -69,7 +69,7 @@ extension ContentCollectionViewCell {
     
     // MARK: - Methods
     
-    func setDataBind(model: TvingContentModel) {
+    func setDataBind(model: ContentModel) {
         movieImage.image = model.image
         movieTitle.text = model.title
     }

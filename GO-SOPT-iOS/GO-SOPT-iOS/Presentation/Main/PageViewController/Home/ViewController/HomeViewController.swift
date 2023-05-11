@@ -22,7 +22,7 @@ final class HomeViewController: BaseViewController {
     
     private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
     var movieModel: [MovieModel] = MovieModel.moviedummyData()
-    private var tvingContentModel: [TvingContentModel] = TvingContentModel.tvingContentdummyData()
+    private var contentModel: [ContentModel] = ContentModel.contentdummyData()
 
     // MARK: - Properties
 
@@ -219,11 +219,11 @@ extension HomeViewController: UICollectionViewDataSource {
         case .poster:
             return movieModel.count
         case .content:
-            return tvingContentModel.count
+            return contentModel.count
         case .live:
             return movieModel.count
         case .paramount:
-            return tvingContentModel.count
+            return contentModel.count
         case .advertising:
             return 1
 
@@ -239,7 +239,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .content:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: tvingContentModel[indexPath.row])
+            cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .live:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
@@ -247,7 +247,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .paramount:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: tvingContentModel[indexPath.row])
+            cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .advertising:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
