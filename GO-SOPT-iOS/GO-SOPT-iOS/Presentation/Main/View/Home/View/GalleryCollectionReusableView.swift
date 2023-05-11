@@ -12,6 +12,8 @@ import Then
 
 final class GalleryCollectionReusableView: UITableViewHeaderFooterView {
     
+    // 안쓰는뷰
+    
     // MARK: - UI Components
     
     let pageControl = UIPageControl()

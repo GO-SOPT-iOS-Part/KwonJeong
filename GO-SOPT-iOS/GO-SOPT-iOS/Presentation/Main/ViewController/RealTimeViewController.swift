@@ -14,8 +14,6 @@ final class RealTimeViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let scrollView = HomeScrollView()
-    
     // MARK: - Properties
 
     // MARK: - Initializer
@@ -35,17 +33,14 @@ extension RealTimeViewController {
     
     private func setUI() {
         
+        view.backgroundColor = Color.tvingGray1
+        
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        
-        view.addSubviews(scrollView)
-        
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+    
     }
     
     // MARK: - Methods

@@ -61,10 +61,9 @@
 		03CD4E8E29E2950A002BF3E0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E8D29E2950A002BF3E0 /* Image.swift */; };
 		03CD4E9029E29511002BF3E0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E8F29E29511002BF3E0 /* Color.swift */; };
 		03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */; };
-		03DB1BF52A02611500DBAE68 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1BF42A02611500DBAE68 /* HomeScrollView.swift */; };
 		03DB1BF72A0282BC00DBAE68 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1BF62A0282BC00DBAE68 /* MovieModel.swift */; };
-		03DB1BFC2A0283E600DBAE68 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1BFB2A0283E600DBAE68 /* MovieCollectionViewCell.swift */; };
-		03DB1C322A04EDFF00DBAE68 /* TvingContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1C312A04EDFF00DBAE68 /* TvingContentCollectionViewCell.swift */; };
+		03DB1BFC2A0283E600DBAE68 /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1BFB2A0283E600DBAE68 /* PosterCollectionViewCell.swift */; };
+		03DB1C322A04EDFF00DBAE68 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1C312A04EDFF00DBAE68 /* ContentCollectionViewCell.swift */; };
 		03DB1C342A04EE7F00DBAE68 /* TvingContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1C332A04EE7F00DBAE68 /* TvingContentModel.swift */; };
 		03DB1C362A04FBA400DBAE68 /* GalleryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1C352A04FBA400DBAE68 /* GalleryCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
@@ -123,10 +122,9 @@
 		03CD4E8D29E2950A002BF3E0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		03CD4E8F29E29511002BF3E0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont +.swift"; sourceTree = "<group>"; usesTabs = 0; };
-		03DB1BF42A02611500DBAE68 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
 		03DB1BF62A0282BC00DBAE68 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
-		03DB1BFB2A0283E600DBAE68 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
-		03DB1C312A04EDFF00DBAE68 /* TvingContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		03DB1BFB2A0283E600DBAE68 /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
+		03DB1C312A04EDFF00DBAE68 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		03DB1C332A04EE7F00DBAE68 /* TvingContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingContentModel.swift; sourceTree = "<group>"; };
 		03DB1C352A04FBA400DBAE68 /* GalleryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -450,9 +448,8 @@
 		03DB1BF92A02835700DBAE68 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				03DB1BF42A02611500DBAE68 /* HomeScrollView.swift */,
-				03DB1C352A04FBA400DBAE68 /* GalleryCollectionReusableView.swift */,
 				036ED6032A0AC347006A7F47 /* SectionHeaderView.swift */,
+				03DB1C352A04FBA400DBAE68 /* GalleryCollectionReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,8 +457,8 @@
 		03DB1BFA2A02835F00DBAE68 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				03DB1BFB2A0283E600DBAE68 /* MovieCollectionViewCell.swift */,
-				03DB1C312A04EDFF00DBAE68 /* TvingContentCollectionViewCell.swift */,
+				03DB1C312A04EDFF00DBAE68 /* ContentCollectionViewCell.swift */,
+				03DB1BFB2A0283E600DBAE68 /* PosterCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -579,7 +576,7 @@
 				0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */,
 				036A1C2929FC12C700B33403 /* BuyTicketView.swift in Sources */,
 				036A1C2729FBF90900B33403 /* MyTicketView.swift in Sources */,
-				03DB1BFC2A0283E600DBAE68 /* MovieCollectionViewCell.swift in Sources */,
+				03DB1BFC2A0283E600DBAE68 /* PosterCollectionViewCell.swift in Sources */,
 				03753BA129E3F2E100B4F2A2 /* UITextField +.swift in Sources */,
 				03DB1C362A04FBA400DBAE68 /* GalleryCollectionReusableView.swift in Sources */,
 				03753BBD29E9A80C00B4F2A2 /* String +.swift in Sources */,
@@ -587,11 +584,10 @@
 				03983A8C29FE698700E5539D /* MyPageTableViewCell.swift in Sources */,
 				03983A9C29FE97C600E5539D /* MainViewController.swift in Sources */,
 				03983AA32A01423C00E5539D /* PageNameModel.swift in Sources */,
-				03DB1C322A04EDFF00DBAE68 /* TvingContentCollectionViewCell.swift in Sources */,
+				03DB1C322A04EDFF00DBAE68 /* ContentCollectionViewCell.swift in Sources */,
 				03753BA629E3F36400B4F2A2 /* CheckButton.swift in Sources */,
 				03983AAD2A01597D00E5539D /* KidsViewController.swift in Sources */,
 				03983AA92A01595C00E5539D /* MovieViewController.swift in Sources */,
-				03DB1BF52A02611500DBAE68 /* HomeScrollView.swift in Sources */,
 				03DB1C342A04EE7F00DBAE68 /* TvingContentModel.swift in Sources */,
 				03983A9229FE74D500E5539D /* UITableView +.swift in Sources */,
 				03983AAF2A015E9C00E5539D /* HomeViewController.swift in Sources */,

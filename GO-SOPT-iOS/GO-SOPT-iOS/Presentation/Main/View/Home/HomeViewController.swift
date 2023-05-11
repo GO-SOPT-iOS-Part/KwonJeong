@@ -75,12 +75,9 @@ extension HomeViewController {
     }
     
     private func setRegister() {
-        homeCollectionView.registerCell(MovieCollectionViewCell.self)
-        homeCollectionView.registerCell(TvingContentCollectionViewCell.self)
-        homeCollectionView.register(GalleryCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "GalleryCollectionReusableView")
-//        homeCollectionView.registerReusableView(SectionHeaderView.self, kind: UICollectionView.elementKindSectionHeader)
-        homeCollectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeaderView")
-
+        homeCollectionView.registerCell(PosterCollectionViewCell.self)
+        homeCollectionView.registerCell(ContentCollectionViewCell.self)
+        homeCollectionView.registerHeader(SectionHeaderView.self)
     }
     
     private func setSectionLayout() -> UICollectionViewLayout {
@@ -120,8 +117,6 @@ extension HomeViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 0, leading: 0, bottom: 0, trailing: 0)
         return section
     }
     
@@ -144,7 +139,7 @@ extension HomeViewController {
         
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(55)
         )
         let haeder = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -165,7 +160,7 @@ extension HomeViewController {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 7, bottom: 0, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.9),
@@ -176,9 +171,19 @@ extension HomeViewController {
             subitems: [item]
         )
         
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(41)
+        )
+        let haeder = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 10, bottom: 0, trailing: 10)
+        section.boundarySupplementaryItems = [haeder]
         
         return section
     }
@@ -192,7 +197,7 @@ extension HomeViewController {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(56)
+            heightDimension: .absolute(58)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -200,7 +205,7 @@ extension HomeViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 103, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 49, leading: 0, bottom: 80, trailing: 0)
         return section
     }
     
@@ -229,23 +234,23 @@ extension HomeViewController: UICollectionViewDataSource {
         let sectionType = SectionType.allCases[indexPath.section]
         switch sectionType {
         case .poster:
-            let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: movieModel[indexPath.row])
             return cell
         case .content:
-            let cell = collectionView.dequeueCell(type: TvingContentCollectionViewCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: tvingContentModel[indexPath.row])
             return cell
         case .live:
-            let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: movieModel[indexPath.row])
             return cell
         case .paramount:
-            let cell = collectionView.dequeueCell(type: TvingContentCollectionViewCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: tvingContentModel[indexPath.row])
             return cell
         case .advertising:
-            let cell = collectionView.dequeueCell(type: MovieCollectionViewCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: movieModel[indexPath.row])
             return cell
         }
@@ -254,30 +259,24 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionType = SectionType.allCases[indexPath.section]
         switch sectionType {
-        case .content:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
-            headerView.setSectionTitle(text: "ksdjfaskdjf;ahef;okhakursj")
-            return headerView
-        case .paramount:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
-//            let headerView = collectionView.dequeueReusableView(type: SectionHeaderView.self, indexPath: indexPath)
-//            headerView.setSectionTitle(text: "가나다라")
-            return headerView
         case .poster:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
-//            let headerView = collectionView.dequeueReusableView(type: SectionHeaderView.self, indexPath: indexPath)
-//            headerView.setSectionTitle(text: "가나다라")
+            let view = UICollectionReusableView()
+            return view
+        case .content:
+            let headerView = collectionView.dequeueReusableCell(kind: kind, type: SectionHeaderView.self, indexPath: indexPath)
+            headerView.setSectionTitle(text: "티빙에서 꼭 봐야하는 콘텐츠")
             return headerView
         case .live:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
-//            let headerView = collectionView.dequeueReusableView(type: SectionHeaderView.self, indexPath: indexPath)
-//            headerView.setSectionTitle(text: "가나다라")
+            let headerView = collectionView.dequeueReusableCell(kind: kind, type: SectionHeaderView.self, indexPath: indexPath)
+            headerView.setSectionTitle(text: "인기 LIVE 채널")
+            return headerView
+        case .paramount:
+            let headerView = collectionView.dequeueReusableCell(kind: kind, type: SectionHeaderView.self, indexPath: indexPath)
+            headerView.setSectionTitle(text: "1화 무료! 파라마운트+ 인기 시리즈")
             return headerView
         case .advertising:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
-//            let headerView = collectionView.dequeueReusableView(type: SectionHeaderView.self, indexPath: indexPath)
-//            headerView.setSectionTitle(text: "가나다라")
-            return headerView
+            let view = UICollectionReusableView()
+            return view
         }
     }
 }

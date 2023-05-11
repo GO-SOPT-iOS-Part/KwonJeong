@@ -14,8 +14,6 @@ final class ParamountViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let scrollView = HomeScrollView()
-    
     // MARK: - Properties
 
     // MARK: - Initializer
@@ -35,17 +33,14 @@ extension ParamountViewController {
     
     private func setUI() {
         
+        view.backgroundColor = Color.tvingGray4
+        
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
-        view.addSubviews(scrollView)
-        
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
     
     // MARK: - Methods

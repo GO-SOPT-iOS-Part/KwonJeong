@@ -17,6 +17,7 @@ final class SectionHeaderView: UICollectionReusableView {
     // MARK: - UI Components
     
     private let headerLabel = UILabel()
+    private let viewAllButton = UIButton()
     
     // MARK: - Properties
     
@@ -46,7 +47,12 @@ extension SectionHeaderView {
         headerLabel.do {
             $0.font = UIFont.pretendard(.semibold, size: 15)
             $0.textColor = Color.tvingWhite
-            $0.text = "anjdi"
+        }
+        
+        viewAllButton.do {
+            $0.setTitle("전체보기 >", for: .normal)
+            $0.setTitleColor(Color.tvingGray2, for: .normal)
+            $0.titleLabel?.font = UIFont.pretendard(.medium, size: 11)
         }
     }
     
@@ -54,10 +60,18 @@ extension SectionHeaderView {
     
     private func setLayout() {
         
-        addSubviews(headerLabel)
+        addSubviews(headerLabel, viewAllButton)
         
         headerLabel.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(8)
+            $0.leading.equalToSuperview().inset(12)
             $0.height.equalTo(23)
+        }
+        
+        viewAllButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(11)
+            $0.trailing.equalToSuperview().inset(8)
+            $0.height.equalTo(20)
         }
     }
     
