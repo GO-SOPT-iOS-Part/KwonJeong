@@ -56,7 +56,7 @@ extension PosterCollectionViewCell {
     
     // MARK: - Methods
     
-    func setDataBind(model: MovieModel) {
+    func setDataBind(model: PosterModel) {
         movieImage.image = model.image
     }
 }
