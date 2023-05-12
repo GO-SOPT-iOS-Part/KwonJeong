@@ -24,6 +24,7 @@ final class HomeViewController: BaseViewController {
     var posterModel: [PosterModel] = PosterModel.posterdummyData()
     private var contentModel: [ContentModel] = []
     private let liveModel: [LiveModel] = LiveModel.livedummyData()
+    private let advertisingModel: [AdvertisingModel] = AdvertisingModel.advertisingdummyData()
 
     // MARK: - Properties
 
@@ -81,6 +82,7 @@ extension HomeViewController {
         homeCollectionView.registerCell(ContentCollectionViewCell.self)
         homeCollectionView.registerHeader(SectionHeaderView.self)
         homeCollectionView.registerCell(LiveCollectonViewCell.self)
+        homeCollectionView.registerCell(AdvertisingCollectionViewCell.self)
     }
     
     private func setSectionLayout() -> UICollectionViewLayout {
@@ -228,7 +230,7 @@ extension HomeViewController: UICollectionViewDataSource {
         case .paramount:
             return contentModel.count
         case .advertising:
-            return 1
+            return advertisingModel.count
         }
     }
     
@@ -252,8 +254,8 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .advertising:
-            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: posterModel[indexPath.row])
+            let cell = collectionView.dequeueCell(type: AdvertisingCollectionViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: advertisingModel[indexPath.row])
             return cell
         }
     }
