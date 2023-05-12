@@ -23,6 +23,7 @@ final class HomeViewController: BaseViewController {
     private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
     var movieModel: [MovieModel] = MovieModel.moviedummyData()
     private var contentModel: [ContentModel] = []
+    private let liveModel: [LiveModel] = LiveModel.livedummyData()
 
     // MARK: - Properties
 
@@ -79,6 +80,7 @@ extension HomeViewController {
         homeCollectionView.registerCell(PosterCollectionViewCell.self)
         homeCollectionView.registerCell(ContentCollectionViewCell.self)
         homeCollectionView.registerHeader(SectionHeaderView.self)
+        homeCollectionView.registerCell(LiveCollectonViewCell.self)
     }
     
     private func setSectionLayout() -> UICollectionViewLayout {
@@ -165,7 +167,7 @@ extension HomeViewController {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.9),
-            heightDimension: .absolute(80)
+            heightDimension: .absolute(140)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -222,12 +224,11 @@ extension HomeViewController: UICollectionViewDataSource {
         case .content:
             return contentModel.count
         case .live:
-            return movieModel.count
+            return liveModel.count
         case .paramount:
             return contentModel.count
         case .advertising:
             return 1
-
         }
     }
     
@@ -243,8 +244,8 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .live:
-            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: movieModel[indexPath.row])
+            let cell = collectionView.dequeueCell(type: LiveCollectonViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: liveModel[indexPath.row])
             return cell
         case .paramount:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
