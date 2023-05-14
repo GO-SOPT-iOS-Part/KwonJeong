@@ -21,8 +21,10 @@ final class HomeViewController: BaseViewController {
     // MARK: - UI Components
     
     private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
-    var movieModel: [MovieModel] = MovieModel.moviedummyData()
-    private var contentModel: [ContentModel] = ContentModel.contentdummyData()
+    var posterModel: [PosterModel] = PosterModel.posterdummyData()
+    private var contentModel: [ContentModel] = []
+    private let liveModel: [LiveModel] = LiveModel.livedummyData()
+    private let advertisingModel: [AdvertisingModel] = AdvertisingModel.advertisingdummyData()
 
     // MARK: - Properties
 
@@ -36,6 +38,7 @@ final class HomeViewController: BaseViewController {
         setLayout()
         setDelegate()
         setRegister()
+        fetchContent()
     }
 }
 
@@ -78,6 +81,8 @@ extension HomeViewController {
         homeCollectionView.registerCell(PosterCollectionViewCell.self)
         homeCollectionView.registerCell(ContentCollectionViewCell.self)
         homeCollectionView.registerHeader(SectionHeaderView.self)
+        homeCollectionView.registerCell(LiveCollectonViewCell.self)
+        homeCollectionView.registerCell(AdvertisingCollectionViewCell.self)
     }
     
     private func setSectionLayout() -> UICollectionViewLayout {
@@ -164,7 +169,7 @@ extension HomeViewController {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.9),
-            heightDimension: .absolute(80)
+            heightDimension: .absolute(140)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -217,16 +222,15 @@ extension HomeViewController: UICollectionViewDataSource {
         let sectionType = SectionType.allCases[section]
         switch sectionType {
         case .poster:
-            return movieModel.count
+            return posterModel.count
         case .content:
             return contentModel.count
         case .live:
-            return movieModel.count
+            return liveModel.count
         case .paramount:
             return contentModel.count
         case .advertising:
-            return 1
-
+            return advertisingModel.count
         }
     }
     
@@ -235,23 +239,23 @@ extension HomeViewController: UICollectionViewDataSource {
         switch sectionType {
         case .poster:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: movieModel[indexPath.row])
+            cell.setDataBind(model: posterModel[indexPath.row])
             return cell
         case .content:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .live:
-            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: movieModel[indexPath.row])
+            let cell = collectionView.dequeueCell(type: LiveCollectonViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: liveModel[indexPath.row])
             return cell
         case .paramount:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .advertising:
-            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: movieModel[indexPath.row])
+            let cell = collectionView.dequeueCell(type: AdvertisingCollectionViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: advertisingModel[indexPath.row])
             return cell
         }
     }
@@ -285,5 +289,30 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Section.allCases.count
+    }
+}
+
+extension HomeViewController {
+    
+    private func fetchContent() {
+        ContentService.shared.content { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? ContentResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                self.contentModel = data.convertToContent()
+                self.homeCollectionView.reloadData()
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("-----------경로이상-------------")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
+            }
+        }
     }
 }

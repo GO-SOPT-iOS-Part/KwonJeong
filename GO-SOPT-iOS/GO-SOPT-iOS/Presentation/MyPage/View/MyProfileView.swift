@@ -46,7 +46,7 @@ extension MyProfileView {
         }
         
         profileName.do {
-            $0.text = "구너정"
+            $0.text = "구너zi우"
             $0.font = UIFont.pretendard(.medium, size: 17)
             $0.textColor = Color.tvingWhite
         }

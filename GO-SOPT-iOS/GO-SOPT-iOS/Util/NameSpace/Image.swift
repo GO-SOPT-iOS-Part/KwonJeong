@@ -33,6 +33,7 @@ public enum Image {
     public static let tvingLogo = UIImage(named: "tvingLogo")!
     public static let live1 = UIImage(named: "live1")!
     public static let live2 = UIImage(named: "live2")!
+    public static let advertising = UIImage(named: "advertising")!
     
     // MARK: - MyPage
     

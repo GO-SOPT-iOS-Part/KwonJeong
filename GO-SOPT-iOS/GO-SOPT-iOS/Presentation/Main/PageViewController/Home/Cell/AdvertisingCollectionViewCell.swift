@@ -1,8 +1,8 @@
 //
-//  MovieCollectionViewCell.swift
+//  AdvertisingCollectionViewCell.swift
 //  GO-SOPT-iOS
 //
-//  Created by KJ on 2023/05/03.
+//  Created by KJ on 2023/05/12.
 //
 
 import UIKit
@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-final class PosterCollectionViewCell: UICollectionViewCell {
+final class AdvertisingCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
-    private let movieImage = UIImageView()
+    private let advertisingImage = UIImageView()
     
     // MARK: - View Life Cycle
     
@@ -29,7 +29,7 @@ final class PosterCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension PosterCollectionViewCell {
+extension AdvertisingCollectionViewCell {
     
     // MARK: - UI Components Property
     
@@ -37,26 +37,21 @@ extension PosterCollectionViewCell {
         
         backgroundColor = .clear
         contentView.backgroundColor = .clear
-        
-        movieImage.do {
-            $0.contentMode = .scaleToFill
-            $0.layer.cornerRadius = 3
-            $0.clipsToBounds = true
-        }
+    
     }
     
     private func setLayout() {
         
-        contentView.addSubviews(movieImage)
+        contentView.addSubviews(advertisingImage)
         
-        movieImage.snp.makeConstraints {
+        advertisingImage.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
     
     // MARK: - Methods
     
-    func setDataBind(model: PosterModel) {
-        movieImage.image = model.image
+    func setDataBind(model: AdvertisingModel) {
+        advertisingImage.image = model.image
     }
 }
