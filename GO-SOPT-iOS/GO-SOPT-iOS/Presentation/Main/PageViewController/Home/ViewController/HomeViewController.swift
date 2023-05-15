@@ -21,7 +21,7 @@ final class HomeViewController: BaseViewController {
     // MARK: - UI Components
     
     private lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
-    var posterModel: [PosterModel] = PosterModel.posterdummyData()
+    var movieModel: [MovieModel] = MovieModel.moviedummyData()
     private var contentModel: [ContentModel] = []
     private let liveModel: [LiveModel] = LiveModel.livedummyData()
 
@@ -220,7 +220,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let sectionType = SectionType.allCases[section]
         switch sectionType {
         case .poster:
-            return posterModel.count
+            return movieModel.count
         case .content:
             return contentModel.count
         case .live:
@@ -237,7 +237,7 @@ extension HomeViewController: UICollectionViewDataSource {
         switch sectionType {
         case .poster:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: posterModel[indexPath.row])
+            cell.setDataBind(model: movieModel[indexPath.row])
             return cell
         case .content:
             let cell = collectionView.dequeueCell(type: ContentCollectionViewCell.self, indexPath: indexPath)
@@ -253,7 +253,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .advertising:
             let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: posterModel[indexPath.row])
+            cell.setDataBind(model: movieModel[indexPath.row])
             return cell
         }
     }
