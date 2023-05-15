@@ -24,6 +24,7 @@ final class HomeViewController: BaseViewController {
     var movieModel: [MovieModel] = MovieModel.moviedummyData()
     private var contentModel: [ContentModel] = []
     private let liveModel: [LiveModel] = LiveModel.livedummyData()
+    private let advertisingModel: [AdvertisingModel] = AdvertisingModel.advertisingdummyData()
 
     // MARK: - Properties
 
@@ -81,6 +82,7 @@ extension HomeViewController {
         homeCollectionView.registerCell(ContentCollectionViewCell.self)
         homeCollectionView.registerHeader(SectionHeaderView.self)
         homeCollectionView.registerCell(LiveCollectonViewCell.self)
+        homeCollectionView.registerCell(AdvertisingCollectionViewCell.self)
     }
     
     private func setSectionLayout() -> UICollectionViewLayout {
@@ -228,7 +230,7 @@ extension HomeViewController: UICollectionViewDataSource {
         case .paramount:
             return contentModel.count
         case .advertising:
-            return 1
+            return advertisingModel.count
         }
     }
     
