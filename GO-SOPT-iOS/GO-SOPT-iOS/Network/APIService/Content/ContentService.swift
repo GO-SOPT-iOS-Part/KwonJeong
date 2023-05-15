@@ -48,7 +48,6 @@ final class ContentService {
     
     private func isValidData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        //??
         guard let decodedData = try? decoder.decode(ContentResponse.self, from: data) else { return .pathErr }
         return .success(decodedData as Any)
     }

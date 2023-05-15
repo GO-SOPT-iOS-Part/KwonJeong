@@ -13,6 +13,7 @@
 import Foundation
 
 // MARK: - ContentResponse
+
 struct ContentResponse: Codable {
     let page: Int
     let results: [Result]

@@ -254,8 +254,8 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.setDataBind(model: contentModel[indexPath.row])
             return cell
         case .advertising:
-            let cell = collectionView.dequeueCell(type: PosterCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: movieModel[indexPath.row])
+            let cell = collectionView.dequeueCell(type: AdvertisingCollectionViewCell.self, indexPath: indexPath)
+            cell.setDataBind(model: advertisingModel[indexPath.row])
             return cell
         }
     }
