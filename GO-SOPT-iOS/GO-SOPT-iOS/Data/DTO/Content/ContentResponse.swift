@@ -13,7 +13,6 @@
 import Foundation
 
 // MARK: - ContentResponse
-
 struct ContentResponse: Codable {
     let page: Int
     let results: [Result]
@@ -61,7 +60,8 @@ struct Result: Codable {
 }
 
 enum OriginalLanguage: String, Codable {
+    case de = "de"
     case en = "en"
-    case fr = "fr"
-    case ko = "ko"
+    case fi = "fi"
+    case pl = "pl"
 }
