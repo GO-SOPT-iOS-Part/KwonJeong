@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Moya
 import SnapKit
 import Then
 
@@ -25,6 +26,7 @@ final class HomeViewController: BaseViewController {
     private var contentModel: [ContentModel] = []
     private let liveModel: [LiveModel] = LiveModel.livedummyData()
     private let advertisingModel: [AdvertisingModel] = AdvertisingModel.advertisingdummyData()
+    private let contentProvider = MoyaProvider<ContentService>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
     // MARK: - Properties
 
@@ -294,25 +296,53 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController {
     
-    private func fetchContent() {
-        ContentService.shared.content { response in
+    func fetchContent() {
+        contentProvider.request(.fetchContent) { response in
             switch response {
-            case .success(let data):
-                guard let data = data as? ContentResponse else { return }
-                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
-                dump(data)
-                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
-                self.contentModel = data.convertToContent()
-                self.homeCollectionView.reloadData()
-            case .serverErr:
-                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
-            case .pathErr:
-                print("-----------경로이상-------------")
-            case .networkErr:
-                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
-            default:
-                return
+            case .success(let result):
+                let status = result.statusCode
+                if status >= 200 && status < 300 {
+                    do {
+                        print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                        print(result)
+                        guard let data = try? JSONDecoder().decode(ContentResponse.self, from: result.data) else { return }
+                        print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                        print(data)
+                        self.contentModel = data.convertToContent()
+                        print(self.contentModel)
+                        self.homeCollectionView.reloadData()
+                    } catch (let error) {
+                        print(error.localizedDescription)
+                    }
+                }
+                else if status >= 400 {
+                    print("400 error")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
+    
+//    private func fetchContent() {
+//        ContentService.shared.content { response in
+//            switch response {
+//            case .success(let data):
+//                guard let data = data as? ContentResponse else { return }
+//                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+//                print(data)
+//                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+//                self.contentModel = data.convertToContent()
+//                self.homeCollectionView.reloadData()
+//            case .serverErr:
+//                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+//            case .pathErr:
+//                print("-----------경로이상-------------")
+//            case .networkErr:
+//                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+//            default:
+//                return
+//            }
+//        }
+//    }
 }
