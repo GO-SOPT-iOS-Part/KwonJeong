@@ -395,6 +395,7 @@ extension SignInViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textFieldBorderSetting(textField: textField)
+        
         return true
     }
     

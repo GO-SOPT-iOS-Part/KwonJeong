@@ -1,10 +1,3 @@
-//
-//  ContentResponse.swift
-//  GO-SOPT-iOS
-//
-//  Created by KJ on 2023/05/12.
-//
-
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
@@ -60,8 +53,6 @@ struct Result: Codable {
 }
 
 enum OriginalLanguage: String, Codable {
-    case de = "de"
     case en = "en"
-    case fi = "fi"
-    case pl = "pl"
+    case es = "es"
 }
