@@ -303,13 +303,8 @@ extension HomeViewController {
                 let status = result.statusCode
                 if status >= 200 && status < 300 {
                     do {
-                        print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
-                        print(result)
                         guard let data = try? JSONDecoder().decode(ContentResponse.self, from: result.data) else { return }
-                        print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
-                        print(data)
                         self.contentModel = data.convertToContent()
-                        print(self.contentModel)
                         self.homeCollectionView.reloadData()
                     } catch (let error) {
                         print(error.localizedDescription)
