@@ -17,7 +17,7 @@ final class GalleryCollectionReusableView: UITableViewHeaderFooterView {
     // MARK: - UI Components
     
     let pageControl = UIPageControl()
-    private var posterModel: [PosterModel] = PosterModel.posterdummyData()
+    private var movieModel: [MovieModel] = MovieModel.moviedummyData()
     
     // MARK: - Properties
     
@@ -43,7 +43,7 @@ extension GalleryCollectionReusableView {
     private func setUI() {
         
         pageControl.do {
-            $0.numberOfPages = posterModel.count
+            $0.numberOfPages = movieModel.count
             $0.pageIndicatorTintColor = Color.tvingGray2
             $0.currentPage = 0
             $0.currentPageIndicatorTintColor = Color.tvingWhite

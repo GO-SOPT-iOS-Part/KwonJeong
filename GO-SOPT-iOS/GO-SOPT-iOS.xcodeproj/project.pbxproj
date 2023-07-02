@@ -37,8 +37,14 @@
 		037C35D12A0D5C0700FAC78B /* UIImageView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35D02A0D5C0700FAC78B /* UIImageView +.swift */; };
 		037C35D42A0E3DCD00FAC78B /* LiveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35D32A0E3DCD00FAC78B /* LiveCollectionViewCell.swift */; };
 		037C35D62A0E42E900FAC78B /* LiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35D52A0E42E900FAC78B /* LiveModel.swift */; };
-		037C35D82A0E47DF00FAC78B /* advertisingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35D72A0E47DF00FAC78B /* advertisingModel.swift */; };
+		037C35D82A0E47DF00FAC78B /* AdvertisingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35D72A0E47DF00FAC78B /* AdvertisingModel.swift */; };
 		037C35DA2A0E487E00FAC78B /* AdvertisingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35D92A0E487E00FAC78B /* AdvertisingCollectionViewCell.swift */; };
+		038027672A4ECC9B0089986F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 038027662A4ECC9B0089986F /* Moya */; };
+		0380276C2A4ECF110089986F /* URLConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380276B2A4ECF110089986F /* URLConst.swift */; };
+		0380276E2A4ECFAF0089986F /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380276D2A4ECFAF0089986F /* NetworkLoggerPlugin.swift */; };
+		038027702A4ECFC50089986F /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380276F2A4ECFC50089986F /* GeneralResponse.swift */; };
+		038027722A4ECFD50089986F /* APIConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038027712A4ECFD50089986F /* APIConst.swift */; };
+		038027742A4ED3850089986F /* Encodable +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038027732A4ED3850089986F /* Encodable +.swift */; };
 		03983A8C29FE698700E5539D /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A8B29FE698700E5539D /* MyPageTableViewCell.swift */; };
 		03983A9029FE6D7B00E5539D /* MyPageListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */; };
 		03983A9229FE74D500E5539D /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03983A9129FE74D500E5539D /* UITableView +.swift */; };
@@ -70,7 +76,7 @@
 		03CD4E8E29E2950A002BF3E0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E8D29E2950A002BF3E0 /* Image.swift */; };
 		03CD4E9029E29511002BF3E0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E8F29E29511002BF3E0 /* Color.swift */; };
 		03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */; };
-		03DB1BF72A0282BC00DBAE68 /* PosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1BF62A0282BC00DBAE68 /* PosterModel.swift */; };
+		03DB1BF72A0282BC00DBAE68 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1BF62A0282BC00DBAE68 /* MovieModel.swift */; };
 		03DB1BFC2A0283E600DBAE68 /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1BFB2A0283E600DBAE68 /* PosterCollectionViewCell.swift */; };
 		03DB1C322A04EDFF00DBAE68 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1C312A04EDFF00DBAE68 /* ContentCollectionViewCell.swift */; };
 		03DB1C342A04EE7F00DBAE68 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB1C332A04EE7F00DBAE68 /* ContentModel.swift */; };
@@ -105,8 +111,13 @@
 		037C35D02A0D5C0700FAC78B /* UIImageView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView +.swift"; sourceTree = "<group>"; };
 		037C35D32A0E3DCD00FAC78B /* LiveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollectionViewCell.swift; sourceTree = "<group>"; };
 		037C35D52A0E42E900FAC78B /* LiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveModel.swift; sourceTree = "<group>"; };
-		037C35D72A0E47DF00FAC78B /* advertisingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = advertisingModel.swift; sourceTree = "<group>"; };
+		037C35D72A0E47DF00FAC78B /* AdvertisingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingModel.swift; sourceTree = "<group>"; };
 		037C35D92A0E487E00FAC78B /* AdvertisingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingCollectionViewCell.swift; sourceTree = "<group>"; };
+		0380276B2A4ECF110089986F /* URLConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConst.swift; sourceTree = "<group>"; };
+		0380276D2A4ECFAF0089986F /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		0380276F2A4ECFC50089986F /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
+		038027712A4ECFD50089986F /* APIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConst.swift; sourceTree = "<group>"; };
+		038027732A4ED3850089986F /* Encodable +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable +.swift"; sourceTree = "<group>"; };
 		03983A8B29FE698700E5539D /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
 		03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageListModel.swift; sourceTree = "<group>"; };
 		03983A9129FE74D500E5539D /* UITableView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView +.swift"; sourceTree = "<group>"; };
@@ -138,7 +149,7 @@
 		03CD4E8D29E2950A002BF3E0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		03CD4E8F29E29511002BF3E0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03CD4E9929E29BAF002BF3E0 /* UIFont +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont +.swift"; sourceTree = "<group>"; usesTabs = 0; };
-		03DB1BF62A0282BC00DBAE68 /* PosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterModel.swift; sourceTree = "<group>"; };
+		03DB1BF62A0282BC00DBAE68 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		03DB1BFB2A0283E600DBAE68 /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		03DB1C312A04EDFF00DBAE68 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		03DB1C332A04EE7F00DBAE68 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
@@ -152,6 +163,7 @@
 			files = (
 				03CD4E6129DB047A002BF3E0 /* SnapKit in Frameworks */,
 				036ED6172A0D412A006A7F47 /* Alamofire in Frameworks */,
+				038027672A4ECC9B0089986F /* Moya in Frameworks */,
 				03CD4E6429DB0485002BF3E0 /* Then in Frameworks */,
 				03753BB529E4051B00B4F2A2 /* Inject in Frameworks */,
 				037C35CE2A0D5B2300FAC78B /* Kingfisher in Frameworks */,
@@ -349,7 +361,8 @@
 		036ED6192A0D42A0006A7F47 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				036ED61D2A0D4B3C006A7F47 /* NetworkResult.swift */,
+				0380276A2A4ECEFE0089986F /* Moya */,
+				038027692A4ECEED0089986F /* Alamofire */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -418,6 +431,25 @@
 			path = CreateNickname;
 			sourceTree = "<group>";
 		};
+		038027692A4ECEED0089986F /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				036ED61D2A0D4B3C006A7F47 /* NetworkResult.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		0380276A2A4ECEFE0089986F /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				0380276B2A4ECF110089986F /* URLConst.swift */,
+				0380276D2A4ECFAF0089986F /* NetworkLoggerPlugin.swift */,
+				0380276F2A4ECFC50089986F /* GeneralResponse.swift */,
+				038027712A4ECFD50089986F /* APIConst.swift */,
+			);
+			path = Moya;
+			sourceTree = "<group>";
+		};
 		03983A8A29FE695600E5539D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,10 +472,10 @@
 			children = (
 				03983A8F29FE6D7B00E5539D /* MyPageListModel.swift */,
 				03983AA22A01423C00E5539D /* PageNameModel.swift */,
-				03DB1BF62A0282BC00DBAE68 /* PosterModel.swift */,
+				03DB1BF62A0282BC00DBAE68 /* MovieModel.swift */,
 				03DB1C332A04EE7F00DBAE68 /* ContentModel.swift */,
 				037C35D52A0E42E900FAC78B /* LiveModel.swift */,
-				037C35D72A0E47DF00FAC78B /* advertisingModel.swift */,
+				037C35D72A0E47DF00FAC78B /* AdvertisingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -562,6 +594,7 @@
 				03983A9329FE74F300E5539D /* UICollectionView +.swift */,
 				03983A9529FE750B00E5539D /* NSObject +.swift */,
 				037C35D02A0D5C0700FAC78B /* UIImageView +.swift */,
+				038027732A4ED3850089986F /* Encodable +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -646,6 +679,7 @@
 				03753BB429E4051B00B4F2A2 /* Inject */,
 				036ED6162A0D412A006A7F47 /* Alamofire */,
 				037C35CD2A0D5B2300FAC78B /* Kingfisher */,
+				038027662A4ECC9B0089986F /* Moya */,
 			);
 			productName = "GO-SOPT-iOS";
 			productReference = 03CD4E4329DAFE76002BF3E0 /* GO-SOPT-iOS.app */;
@@ -681,6 +715,7 @@
 				03753BB329E4051B00B4F2A2 /* XCRemoteSwiftPackageReference "Inject" */,
 				036ED6152A0D412A006A7F47 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				037C35CC2A0D5B2300FAC78B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				038027652A4ECC9B0089986F /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 03CD4E4429DAFE76002BF3E0 /* Products */;
 			projectDirPath = "";
@@ -718,9 +753,9 @@
 				03983A9A29FE81C700E5539D /* LogoutButtonView.swift in Sources */,
 				03983A9029FE6D7B00E5539D /* MyPageListModel.swift in Sources */,
 				03983A9829FE7F2700E5539D /* SectionLineView.swift in Sources */,
-				037C35D82A0E47DF00FAC78B /* advertisingModel.swift in Sources */,
+				037C35D82A0E47DF00FAC78B /* AdvertisingModel.swift in Sources */,
 				036A1C1E29FBDABF00B33403 /* MyProfileView.swift in Sources */,
-				03DB1BF72A0282BC00DBAE68 /* PosterModel.swift in Sources */,
+				03DB1BF72A0282BC00DBAE68 /* MovieModel.swift in Sources */,
 				03983A9429FE74F300E5539D /* UICollectionView +.swift in Sources */,
 				03753BBB29E686C600B4F2A2 /* CreateNicknameViewController.swift in Sources */,
 				03CD4E4729DAFE76002BF3E0 /* AppDelegate.swift in Sources */,
@@ -728,6 +763,9 @@
 				03CD4E9029E29511002BF3E0 /* Color.swift in Sources */,
 				036A1C2B29FC16CC00B33403 /* MyPageView.swift in Sources */,
 				03CD4E6A29DB06AD002BF3E0 /* UIView +.swift in Sources */,
+				0380276E2A4ECFAF0089986F /* NetworkLoggerPlugin.swift in Sources */,
+				038027722A4ECFD50089986F /* APIConst.swift in Sources */,
+				0380276C2A4ECF110089986F /* URLConst.swift in Sources */,
 				03CD4E9A29E29BAF002BF3E0 /* UIFont +.swift in Sources */,
 				03753B9E29E3EC9500B4F2A2 /* SignInViewController.swift in Sources */,
 				036A1C1529FA5B2000B33403 /* BaseViewController.swift in Sources */,
@@ -737,10 +775,12 @@
 				03753BB829E5B28300B4F2A2 /* WelcomeViewController.swift in Sources */,
 				036A1C2D29FC342E00B33403 /* UILabel +.swift in Sources */,
 				03CD4E4929DAFE76002BF3E0 /* SceneDelegate.swift in Sources */,
+				038027742A4ED3850089986F /* Encodable +.swift in Sources */,
 				03983AA12A013FD600E5539D /* PageCollectionViewCell.swift in Sources */,
 				03CD4E6C29DB0F07002BF3E0 /* SecondViewController.swift in Sources */,
 				03753BA329E3F2FA00B4F2A2 /* UIButton +.swift in Sources */,
 				036A1C1829FA64D100B33403 /* MyPageViewController.swift in Sources */,
+				038027702A4ECFC50089986F /* GeneralResponse.swift in Sources */,
 				0371AEA529EEABD80036932B /* UIViewController +.swift in Sources */,
 				036A1C2929FC12C700B33403 /* BuyTicketView.swift in Sources */,
 				036A1C2729FBF90900B33403 /* MyTicketView.swift in Sources */,
@@ -1028,6 +1068,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		038027652A4ECC9B0089986F /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 		03CD4E5F29DB047A002BF3E0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1061,6 +1109,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 037C35CC2A0D5B2300FAC78B /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		038027662A4ECC9B0089986F /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 038027652A4ECC9B0089986F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 		03CD4E6029DB047A002BF3E0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
