@@ -300,18 +300,15 @@ extension HomeViewController {
         contentProvider.request(.fetchContent) { response in
             switch response {
             case .success(let result):
-                let status = result.statusCode
-                if status >= 200 && status < 300 {
-                    do {
+                do {
+                    let status = result.statusCode
+                    if status >= 200 && status < 300 {
                         guard let data = try? JSONDecoder().decode(ContentResponse.self, from: result.data) else { return }
                         self.contentModel = data.convertToContent()
                         self.homeCollectionView.reloadData()
-                    } catch (let error) {
-                        print(error.localizedDescription)
                     }
-                }
-                else if status >= 400 {
-                    print("400 error")
+                } catch (let error) {
+                    print(error.localizedDescription)
                 }
             case .failure(let error):
                 print(error.localizedDescription)

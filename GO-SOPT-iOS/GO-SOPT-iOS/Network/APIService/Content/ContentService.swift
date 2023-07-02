@@ -20,7 +20,7 @@ extension ContentService: TargetType {
     var path: String {
         switch self {
         case .fetchContent:
-            return "/3/movie/popular"
+            return URLConst.contentURL
         }
     }
 

@@ -15,6 +15,5 @@ public enum URLConst {
     
     // MARK: - URL Path
     
-    public static let contentURL = "/3/movie/popular?api_key=5ef8d1b433c1a9970f7ade5c76cc090d&language=ko-KR"
-
+    public static let contentURL = "/3/movie/popular"
 }
